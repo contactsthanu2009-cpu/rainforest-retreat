@@ -1,0 +1,3027 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rainforest Retreat — Kukuleganga | Gendagala, Ayagama, Sri Lanka</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              950: '#07150F',
+              900: '#0D231A',
+              800: '#163326',
+              700: '#1F4735',
+              600: '#2B5E47',
+              100: '#E5EFEA',
+              50: '#F2F7F4'
+            },
+            gold: {
+              700: '#8C6928',
+              600: '#AD863B',
+              500: '#C8A45D',
+              400: '#DAB978',
+              300: '#EAD29E',
+              100: '#FAF3E3'
+            },
+            cream: {
+              50: '#FAF9F5',
+              100: '#F5F3EB',
+              200: '#EAE5D7',
+              300: '#DCD4C0'
+            },
+            wood: {
+              900: '#1A211C',
+              700: '#3A463E',
+              500: '#626F66'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F5F3EB;
+      color: #1A211C;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    /* Mobile-First Hero Cabin Crop & Subtle Ken-Burns Zoom */
+    .hero-cabin-img {
+      object-fit: cover;
+      object-position: 62% center;
+      animation: heroSlowZoom 24s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    @media (min-width: 768px) {
+      .hero-cabin-img {
+        object-position: center center;
+      }
+    }
+    @keyframes heroSlowZoom {
+      0% { transform: scale(1.0); }
+      100% { transform: scale(1.08); }
+    }
+
+    /* Smooth Scroll Reveal Animations */
+    .reveal, .reveal-left, .reveal-right {
+      opacity: 0;
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal { transform: translateY(26px); }
+    .reveal-left { transform: translateX(-28px); }
+    .reveal-right { transform: translateX(28px); }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    /* Boutique Card Hover & Image Zoom */
+    .nature-card {
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .nature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 38px -15px rgba(13, 35, 26, 0.18);
+      border-color: #C8A45D;
+    }
+    .card-zoom-img {
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nature-card:hover .card-zoom-img {
+      transform: scale(1.06);
+    }
+
+    /* Page View Transitions */
+    .page-view {
+      display: none;
+    }
+    .page-view.active {
+      display: block;
+      animation: pageFadeIn 0.35s ease-out;
+    }
+    @keyframes pageFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #F5F3EB; }
+    ::-webkit-scrollbar-thumb { background: #1F4735; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0D231A; }
+  </style>
+
+  <script>
+    // Safe helper functions defined in <head> before any <img> loads
+    window.FALLBACK_SVG_CACHE = {};
+
+    window.safeJsAttr = function(str) {
+      return String(str || '')
+        .replace(/\\/g, '\\\\')
+        .replace(/'/g, "\\'")
+        .replace(/"/g, '&quot;')
+        .replace(/\r?\n/g, ' ');
+    };
+
+    window.createNaturePlaceholderSVG = function(localPath, label) {
+      const key = localPath + '__' + label;
+      if (window.FALLBACK_SVG_CACHE[key]) return window.FALLBACK_SVG_CACHE[key];
+
+      const safePath = String(localPath || 'images/photo.jpg').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      const safeLabel = String(label || 'Rainforest Retreat').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+        <defs>
+          <linearGradient id="rfGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0D231A"/>
+            <stop offset="55%" stop-color="#163326"/>
+            <stop offset="100%" stop-color="#07150F"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="560" fill="url(#rfGrad)"/>
+        <rect x="24" y="24" width="752" height="512" rx="10" fill="none" stroke="#C8A45D" stroke-opacity="0.4" stroke-width="1.5"/>
+        <g transform="translate(400, 200)" stroke="#EAD29E" stroke-width="2.2" fill="none" opacity="0.88">
+          <path d="M-38,25 C-62,25 -72,-5 -58,-35 C-45,-65 -15,-65 -5,-35 C5,-5 0,25 -38,25 Z"/>
+          <path d="M22,25 C-5,25 -15,-12 0,-42 C15,-72 52,-68 65,-38 C78,-8 55,25 22,25 Z"/>
+          <line x1="-32" y1="-15" x2="-32" y2="52"/>
+          <line x1="28" y1="-18" x2="28" y2="52"/>
+          <polygon points="-14,52 -14,26 0,14 14,26 14,52"/>
+          <line x1="-68" y1="52" x2="68" y2="52" stroke-width="2.5"/>
+        </g>
+        <text x="400" y="315" text-anchor="middle" fill="#FAF9F5" font-family="Georgia, serif" font-size="25" font-weight="600">${safeLabel}</text>
+        <rect x="180" y="342" width="440" height="36" rx="6" fill="#07150F" stroke="#C8A45D" stroke-opacity="0.5" stroke-width="1"/>
+        <text x="400" y="365" text-anchor="middle" fill="#DAB978" font-family="monospace" font-size="13">Local Folder File: ${safePath}</text>
+        <text x="400" y="415" text-anchor="middle" fill="#A5B8AD" font-family="sans-serif" font-size="12">Place your HD photo in this folder path for full resolution display</text>
+      </svg>`;
+
+      const encoded = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+      window.FALLBACK_SVG_CACHE[key] = encoded;
+      return encoded;
+    };
+
+    window.handleArchImageFallback = function(imgEl, localPath, label) {
+      if (!imgEl) return;
+      if (imgEl.dataset.fallbackDone === '1') return;
+      imgEl.dataset.fallbackDone = '1';
+      imgEl.src = window.createNaturePlaceholderSVG(localPath, label);
+    };
+  </script>
+</head>
+<body class="min-h-screen flex flex-col justify-between pb-16 lg:pb-0 selection:bg-forest-800 selection:text-gold-300">
+
+  <!-- =================================================================== -->
+  <!-- 1. TOP UTILITY BAR                                                  -->
+  <!-- =================================================================== -->
+  <div class="bg-forest-950 text-cream-100 text-xs border-b border-forest-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold-500"></span>
+        <span id="topbar-address" class="text-cream-100/90 font-medium tracking-wide">Kukuleganga, Ayagama</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 sm:gap-5">
+        <!-- Multi-Currency Switcher -->
+        <div class="flex items-center gap-1.5 bg-forest-900 border border-forest-700 rounded-md px-2.5 py-1">
+          <span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">Currency:</span>
+          <select id="currency-selector" onchange="changeCurrency(this.value)" class="bg-transparent text-white font-semibold text-xs focus:outline-none cursor-pointer">
+            <option value="LKR" class="bg-forest-950 text-white">LKR (Rs.)</option>
+            <option value="USD" class="bg-forest-950 text-white">USD ($)</option>
+            <option value="EUR" class="bg-forest-950 text-white">EUR (€)</option>
+          </select>
+        </div>
+
+        <button onclick="openAccessRoutesModal()" class="text-gold-400 hover:text-gold-300 underline underline-offset-4 font-semibold transition">
+          Access Routes
+        </button>
+
+        <a id="topbar-fb" href="https://www.facebook.com/rainforestretreatlk" target="_blank" rel="noopener" class="hover:text-gold-400 transition hidden md:inline">Facebook</a>
+        <a id="topbar-ig" href="#instagram" target="_blank" rel="noopener" class="hover:text-gold-400 transition hidden md:inline">Instagram</a>
+        <a id="topbar-email" href="mailto:rr.kukule@gmail.com" class="hover:text-gold-400 transition hidden sm:inline">rr.kukule@gmail.com</a>
+        <a id="topbar-wa" href="https://wa.me/94712359694" target="_blank" rel="noopener" class="text-gold-300 hover:text-white font-semibold transition">+94 71 235 9694</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- 2. MAIN STICKY NAVIGATION HEADER                                    -->
+  <!-- =================================================================== -->
+  <header class="sticky top-0 z-40 bg-forest-900/95 backdrop-blur-md text-white border-b border-forest-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <button onclick="navigateTo('home')" class="flex items-center gap-3.5 text-left group">
+        <div class="w-12 h-12 rounded-lg bg-forest-950 border border-gold-500/50 flex items-center justify-center p-1.5 overflow-hidden shrink-0">
+          <img
+            id="nav-logo-img"
+            src="images/logo.png"
+            alt="Rainforest Retreat Logo"
+            class="w-full h-full object-contain"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          />
+          <svg style="display:none;" viewBox="0 0 100 82" class="w-9 h-9 stroke-gold-400 fill-none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M35,54 C14,54 8,28 20,10 C32,-6 52,0 56,22 C60,40 50,54 35,54 Z"/>
+            <path d="M66,54 C46,54 40,26 52,8 C64,-6 86,2 90,24 C94,42 82,54 66,54 Z"/>
+            <line x1="36" y1="28" x2="36" y2="74"/>
+            <line x1="66" y1="28" x2="66" y2="74"/>
+            <polygon points="44,74 44,57 51,49 58,57 58,74"/>
+            <line x1="14" y1="74" x2="88" y2="74" stroke-width="3.5"/>
+          </svg>
+        </div>
+        <div>
+          <span class="block font-serif text-xl sm:text-2xl tracking-[0.14em] uppercase text-white font-semibold leading-none">Rainforest Retreat</span>
+          <span class="block text-[10px] tracking-[0.26em] uppercase text-gold-400 mt-1">Kukuleganga, Ayagama</span>
+        </div>
+      </button>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-6">
+        <button onclick="navigateTo('home')" data-nav="home" class="nav-link text-xs uppercase tracking-[0.15em] text-gold-400 font-semibold transition py-2">Home</button>
+        <button onclick="navigateTo('rooms')" data-nav="rooms" class="nav-link text-xs uppercase tracking-[0.15em] text-cream-100/85 hover:text-gold-300 transition py-2">Rooms &amp; Rates</button>
+        <button onclick="navigateTo('attractions')" data-nav="attractions" class="nav-link text-xs uppercase tracking-[0.15em] text-cream-100/85 hover:text-gold-300 transition py-2">Experiences &amp; Nearby</button>
+        <button onclick="navigateTo('community')" data-nav="community" class="nav-link text-xs uppercase tracking-[0.15em] text-cream-100/85 hover:text-gold-300 transition py-2">Community</button>
+        <button onclick="navigateTo('gallery')" data-nav="gallery" class="nav-link text-xs uppercase tracking-[0.15em] text-cream-100/85 hover:text-gold-300 transition py-2">Gallery</button>
+        <button onclick="navigateTo('booking')" data-nav="booking" class="nav-link text-xs uppercase tracking-[0.15em] text-cream-100/85 hover:text-gold-300 transition py-2">Checkout</button>
+      </nav>
+
+      <!-- Right Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <button onclick="navigateTo('booking')" class="hidden sm:inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-widest px-4 py-2.5 rounded-md shadow-md transition">
+          Book Now
+        </button>
+        <button onclick="navigateTo('admin')" title="Admin Panel" class="p-2.5 rounded-md bg-forest-950 hover:bg-forest-800 border border-forest-700 text-gold-300 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </button>
+        <button onclick="toggleMobileDrawer()" class="lg:hidden p-2 rounded-md border border-forest-700 text-cream-100 hover:text-gold-300" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Drawer -->
+    <div id="mobile-drawer" class="hidden lg:hidden bg-forest-950 border-t border-forest-800 px-4 pt-3 pb-5 space-y-2">
+      <button onclick="navigateTo('home'); toggleMobileDrawer();" class="block w-full text-left px-3.5 py-2.5 rounded-md text-sm font-medium text-cream-100 hover:bg-forest-800">Home</button>
+      <button onclick="navigateTo('rooms'); toggleMobileDrawer();" class="block w-full text-left px-3.5 py-2.5 rounded-md text-sm font-medium text-cream-100 hover:bg-forest-800">Rooms &amp; Packages</button>
+      <button onclick="navigateTo('attractions'); toggleMobileDrawer();" class="block w-full text-left px-3.5 py-2.5 rounded-md text-sm font-medium text-cream-100 hover:bg-forest-800">Experiences, Village &amp; Nearby</button>
+      <button onclick="navigateTo('community'); toggleMobileDrawer();" class="block w-full text-left px-3.5 py-2.5 rounded-md text-sm font-medium text-cream-100 hover:bg-forest-800">Community &amp; Mission</button>
+      <button onclick="navigateTo('gallery'); toggleMobileDrawer();" class="block w-full text-left px-3.5 py-2.5 rounded-md text-sm font-medium text-cream-100 hover:bg-forest-800">Photo Gallery</button>
+      <button onclick="navigateTo('booking'); toggleMobileDrawer();" class="block w-full text-left px-3.5 py-2.5 rounded-md text-sm font-bold bg-gold-500 text-forest-950">Check Availability &amp; Checkout</button>
+      <button onclick="navigateTo('admin'); toggleMobileDrawer();" class="block w-full text-left px-3.5 py-2.5 rounded-md text-xs font-medium text-gold-300 border border-forest-800">🔒 Admin Login</button>
+    </div>
+  </header>
+
+  <!-- =================================================================== -->
+  <!-- MAIN CONTENT CONTAINER                                              -->
+  <!-- =================================================================== -->
+  <main class="flex-grow">
+
+    <!-- ================================================================= -->
+    <!-- PAGE 1: HOME PAGE (#page-home)                                    -->
+    <!-- ================================================================= -->
+    <section id="page-home" class="page-view active">
+      <!-- HERO SECTION WITH MISTY RAINFOREST CABIN GLOW -->
+      <div class="relative min-h-[85vh] flex flex-col justify-between bg-forest-950 overflow-hidden border-b-4 border-gold-500">
+        <img
+          id="home-hero-img"
+          src="images/hero-cabin.jpg"
+          alt="Rainforest Retreat Cabin in Kukuleganga, Ayagama"
+          class="hero-cabin-img absolute inset-0 w-full h-full opacity-80"
+          onerror="handleArchImageFallback(this, 'images/hero-cabin.jpg', 'Misty Rainforest Cabin Glow')"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-950/55 to-forest-950/35"></div>
+
+        <!-- Center Hero Copy -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-10 text-center my-auto">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest-900/90 border border-gold-500/50 text-gold-300 text-xs uppercase tracking-[0.22em] mb-6 shadow">
+            <span id="hero-address-badge">Kukuleganga, Ayagama</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-semibold leading-[1.1] max-w-5xl mx-auto drop-shadow-md">
+            Escape into the raptures of the fauna, flora and the flowing streams.
+          </h1>
+
+          <p class="mt-6 text-base sm:text-xl text-cream-100/95 max-w-3xl mx-auto font-light leading-relaxed">
+            A landscape embedded with rare trees and endemic medicinal plants, waterfalls and streams.
+          </p>
+
+          <!-- Clean Hero Buttons Including Prominent Direct WhatsApp Button -->
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3.5">
+            <button onclick="navigateTo('booking')" class="bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs sm:text-sm uppercase tracking-[0.15em] px-7 py-4 rounded-md shadow-xl transition">
+              Check Availability &amp; Book
+            </button>
+            <a id="hero-whatsapp-btn" href="https://wa.me/94712359694?text=Hello%20Rainforest%20Retreat%20%E2%80%94%20Kukuleganga%2C%20Ayagama!%20I%20would%20like%20to%20inquire%20about%20a%20stay." target="_blank" rel="noopener" class="bg-[#25D366] hover:bg-[#20bd5a] text-forest-950 font-bold text-xs sm:text-sm uppercase tracking-[0.14em] px-7 py-4 rounded-md shadow-xl inline-flex items-center gap-2 transition">
+              <span>💬 WhatsApp Us</span>
+            </a>
+            <button onclick="navigateTo('rooms')" class="bg-forest-900/85 hover:bg-forest-800 text-white border border-gold-400/50 font-semibold text-xs sm:text-sm uppercase tracking-[0.15em] px-6 py-4 rounded-md transition">
+              Rooms &amp; Rates
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Check Availability Bar Inside Hero Bottom -->
+        <div class="relative z-10 max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-8">
+          <div class="bg-forest-900/95 backdrop-blur-md border border-gold-500/40 rounded-xl p-4 sm:p-5 shadow-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 items-end">
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-gold-300 font-semibold mb-1">Check-In Date</label>
+              <input id="quick-checkin" type="date" class="w-full px-3 py-2.5 rounded bg-forest-950 border border-forest-700 text-white text-xs focus:outline-none focus:border-gold-400" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-gold-300 font-semibold mb-1">Check-Out Date</label>
+              <input id="quick-checkout" type="date" class="w-full px-3 py-2.5 rounded bg-forest-950 border border-forest-700 text-white text-xs focus:outline-none focus:border-gold-400" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-[10px] uppercase tracking-widest text-gold-300 font-semibold mb-1">Room or Package</label>
+              <select id="quick-package" class="w-full px-3 py-2.5 rounded bg-forest-950 border border-forest-700 text-white text-xs focus:outline-none focus:border-gold-400">
+                <option value="triple-room">1. Room Only - Triple Room (Rs. 22,000)</option>
+                <option value="double-room">2. Room Only - Double Room (Rs. 15,000)</option>
+                <option value="family-room">3. Room Only - Family Room (Rs. 30,000)</option>
+                <option value="full-board-pkg">4. Full Board Package (Rs. 30,000 Display / Rs. 15,000 pp)</option>
+                <option value="entire-place-pkg">5. Entire Place with Private Cook (Rs. 70,000)</option>
+              </select>
+            </div>
+            <div>
+              <button onclick="proceedFromQuickBar()" class="w-full bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-wider py-3 px-4 rounded shadow transition">
+                Proceed to Checkout →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SANCTUARY STORY & HEALING ENERGY SECTION (EXACT PARAGRAPHS) -->
+      <div class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Left 7 Cols: Exact Story Text -->
+          <div class="lg:col-span-7 space-y-5 reveal-left">
+            <span class="text-xs uppercase tracking-[0.22em] text-forest-700 font-bold block">Rainforest Retreat • Kukuleganga, Ayagama</span>
+            <h2 class="font-serif text-3xl sm:text-5xl text-forest-900 font-semibold leading-tight">
+              Escape into the raptures of the fauna, flora and the flowing streams.
+            </h2>
+
+            <div class="space-y-4 text-wood-700 text-sm sm:text-base leading-relaxed">
+              <p>
+                Escape into the raptures of the fauna, flora and the flowing streams. A landscape embedded with rare trees and endemic medicinal plants, waterfalls and streams.
+              </p>
+              <p>
+                <strong>'Rainforest Retreat'</strong> is neatly tucked away amidst the rain forest terrain of the Kukuleganga region, an area famous for its many waterways. Enjoy a peaceful retreat amidst the looming trees, surrounded by the music of the humming birds and the babbling brook.
+              </p>
+
+              <!-- Highlighted Healing Energy Quote -->
+              <blockquote class="p-5 rounded-xl bg-forest-900 text-gold-300 border-l-4 border-gold-500 font-serif italic text-lg sm:text-xl shadow-md">
+                Many guests have mentioned the rare energy felt within our premises. "Easier to focus quickly and to meditate, healing energy, ability to get into a stance more easily" are some of the comments.
+              </blockquote>
+
+              <p>
+                Protecting this valuable energy and the gifts of nature, in a sustainable manner, is our prime objective.
+              </p>
+              <p>
+                <strong>'Supporting the village community for sustainable development'</strong> is another objective and a strategy.
+              </p>
+              <p>
+                The location facility and layout of the Rainforest Retreat provides an ideal place to get away from the hustle and bustle of daily life enabling you to mingle with the simple pleasures of nature.
+              </p>
+            </div>
+
+            <div class="pt-3 flex flex-wrap items-center gap-3.5">
+              <button onclick="navigateTo('rooms')" class="bg-forest-900 hover:bg-forest-800 text-gold-300 text-xs uppercase tracking-widest font-semibold px-6 py-3.5 rounded-md transition">
+                View Rooms &amp; Packages
+              </button>
+              <a id="story-whatsapp-btn" href="https://wa.me/94712359694" target="_blank" rel="noopener" class="bg-[#25D366] hover:bg-[#20bd5a] text-forest-950 text-xs uppercase tracking-widest font-bold px-6 py-3.5 rounded-md transition inline-flex items-center gap-2">
+                <span>💬 Chat on WhatsApp</span>
+              </a>
+              <button onclick="navigateTo('attractions')" class="border border-forest-800 text-forest-900 hover:bg-forest-900 hover:text-white text-xs uppercase tracking-widest font-semibold px-6 py-3.5 rounded-md transition">
+                Explore Experiences
+              </button>
+            </div>
+          </div>
+
+          <!-- Right 5 Cols: Nature Photo Collage -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4 reveal-right">
+            <div class="col-span-2 nature-card bg-white p-2.5 rounded-xl border border-cream-300 shadow-sm">
+              <div class="h-64 sm:h-72 rounded-lg overflow-hidden bg-forest-900">
+                <img
+                  id="home-story-img-1"
+                  src="images/verandah-night.jpg"
+                  alt="Rainforest Retreat Chalet Verandah at Night"
+                  onclick="openLightbox(this.src, 'Rainforest Retreat Chalet Verandah')"
+                  class="cursor-pointer w-full h-full object-cover card-zoom-img"
+                  onerror="handleArchImageFallback(this, 'images/verandah-night.jpg', 'Chalet Verandah in the Rainforest')"
+                />
+              </div>
+            </div>
+            <div class="nature-card bg-white p-2 rounded-xl border border-cream-300 shadow-sm">
+              <div class="h-44 sm:h-52 rounded-lg overflow-hidden bg-forest-900">
+                <img
+                  id="home-story-img-2"
+                  src="images/meditation-stream.jpg"
+                  alt="Meditating by the Kukuleganga Stream"
+                  onclick="openLightbox(this.src, 'Stream Meditation & Healing Energy')"
+                  class="cursor-pointer w-full h-full object-cover card-zoom-img"
+                  onerror="handleArchImageFallback(this, 'images/meditation-stream.jpg', 'Stream Meditation & Healing Energy')"
+                />
+              </div>
+            </div>
+            <div class="nature-card bg-white p-2 rounded-xl border border-cream-300 shadow-sm">
+              <div class="h-44 sm:h-52 rounded-lg overflow-hidden bg-forest-900">
+                <img
+                  id="home-story-img-3"
+                  src="images/morning-tea.jpg"
+                  alt="Morning Tea Surrounded by Rainforest Canopy"
+                  onclick="openLightbox(this.src, 'Morning Tea in the Rainforest')"
+                  class="cursor-pointer w-full h-full object-cover card-zoom-img"
+                  onerror="handleArchImageFallback(this, 'images/morning-tea.jpg', 'Morning Tea in the Canopy')"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROOMS & PACKAGES PREVIEW SECTION ON HOME PAGE -->
+      <div class="bg-cream-200/70 border-y border-cream-300 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 reveal">
+            <div>
+              <span class="text-xs uppercase tracking-[0.22em] text-forest-700 font-bold">Sanctuary Accommodation</span>
+              <h2 class="font-serif text-3xl sm:text-5xl text-forest-900 font-semibold mt-1">Rooms &amp; All-Inclusive Packages</h2>
+              <p class="text-sm text-wood-700 mt-2 max-w-2xl">
+                Click on any of our 3 individual <strong>Room Only</strong> chalets (Triple, Double, or Family) to open its 4-photo detail page and room benefits, or select our <strong>Full Board</strong> or <strong>Entire Place with Private Cook</strong> packages.
+              </p>
+            </div>
+            <button onclick="navigateTo('rooms')" class="self-start md:self-auto bg-forest-900 hover:bg-forest-800 text-gold-300 text-xs uppercase tracking-widest font-semibold px-6 py-3.5 rounded-md transition">
+              View All Rooms &amp; Rates →
+            </button>
+          </div>
+
+          <!-- 3 Clickable Rooms Grid -->
+          <div id="home-rooms-grid" class="grid grid-cols-1 md:grid-cols-3 gap-7 reveal"></div>
+
+          <!-- 2 Non-Clickable Packages Grid -->
+          <div id="home-packages-grid" class="grid grid-cols-1 md:grid-cols-2 gap-7 mt-8 reveal"></div>
+        </div>
+      </div>
+
+      <!-- INSIDE THE RAINFOREST RETREAT — 9 IN-HOUSE ACTIVITIES ON HOME PAGE -->
+      <div class="bg-forest-900 text-cream-100 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+            <div>
+              <span class="text-xs uppercase tracking-[0.22em] text-gold-400 font-semibold">On-Premises Sanctuary Experiences</span>
+              <h2 class="font-serif text-3xl sm:text-5xl text-white font-semibold mt-1">Inside the Rainforest Retreat</h2>
+              <p class="text-sm text-cream-200/85 mt-2 max-w-2xl">
+                Experience calm, creativity, and healing inside our premises. Click <strong>"+ Add to Booking"</strong> on any activity to include it in your Checkout inquiry.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <button onclick="navigateTo('attractions')" class="bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-widest px-5 py-3.5 rounded-md shadow transition">
+                View Village &amp; Nearby Attractions →
+              </button>
+            </div>
+          </div>
+
+          <!-- 9 Inside Retreat Activities Grid -->
+          <div id="home-inside-activities-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 reveal"></div>
+        </div>
+      </div>
+
+      <!-- MISSION OF THE RAINFOREST RETREAT (GAYA HAPUARACHCHI) -->
+      <div class="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal">
+        <div class="bg-white border border-cream-300 rounded-2xl p-8 sm:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-4">
+            <div class="h-64 sm:h-72 rounded-xl overflow-hidden bg-forest-900 border border-cream-300">
+              <img
+                id="home-mission-img"
+                src="images/community/mission-founder.jpg"
+                alt="Mission of the Rainforest Retreat — Gaya Hapuarachchi"
+                class="w-full h-full object-cover"
+                onerror="handleArchImageFallback(this, 'images/community/mission-founder.jpg', 'Mission of the Rainforest Retreat')"
+              />
+            </div>
+          </div>
+          <div class="lg:col-span-8 space-y-4">
+            <span class="inline-block text-xs uppercase tracking-[0.2em] text-gold-700 bg-gold-100 px-3.5 py-1 rounded font-semibold">Founder's Vision &amp; Dedication</span>
+            <h2 class="font-serif text-3xl sm:text-4xl text-forest-900 font-semibold">
+              Mission of the Rainforest Retreat
+            </h2>
+            <p class="text-wood-700 text-base sm:text-lg leading-relaxed italic font-serif">
+              Behind the Rainforest Retreat's becoming of an authentic and refreshing, nature-oriented experience, lies the resilience and passion of Gaya Hapuarachchi. It was her dream to one day create "a holiday haven set in the midst of a lush unspoiled environment, with water flowing through a landscape of trees and abundant greenery", that drove more than a decade-worth of efforts and hard-won gains, translating dream to reality.
+            </p>
+            <div class="pt-2">
+              <button onclick="navigateTo('community')" class="text-xs uppercase tracking-widest font-bold text-forest-900 hover:text-gold-700 underline underline-offset-4">
+                Explore Our Community Sustainability Projects →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUTHENTIC GUEST REVIEWS SECTION (ALL 4 EXACT REVIEWS) -->
+      <div class="bg-forest-950 text-cream-100 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-forest-800">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+            <span class="text-xs uppercase tracking-[0.22em] text-gold-400 font-semibold">Authentic Guest Reflections</span>
+            <h2 class="font-serif text-3xl sm:text-5xl text-white font-semibold mt-2">Guest Reviews</h2>
+            <p class="text-sm text-cream-200/80 mt-2">
+              Real reflections from guests who experienced the tranquility and high energy of Rainforest Retreat, Kukuleganga, Ayagama.
+            </p>
+          </div>
+
+          <div id="home-reviews-grid" class="grid grid-cols-1 md:grid-cols-2 gap-7 reveal"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 2: ROOMS & PACKAGES PAGE (#page-rooms)                       -->
+    <!-- ================================================================= -->
+    <section id="page-rooms" class="page-view py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="border-b border-cream-300 pb-8 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-[0.2em] text-forest-700 font-bold">Kukuleganga, Ayagama</span>
+          <h1 class="font-serif text-4xl sm:text-6xl text-forest-900 font-semibold mt-1">Rooms &amp; Packages</h1>
+          <p class="text-wood-700 text-sm sm:text-base mt-2 max-w-3xl">
+            Click on any of our 3 individual <strong>Room Only</strong> chalets below (1. Triple Room, 2. Double Room, 3. Family Room) to view its 4-photo gallery and room benefits. Or select our <strong>Full Board Package</strong> or <strong>Entire Place with Private Cook</strong> directly.
+          </p>
+        </div>
+        <button onclick="navigateTo('booking')" class="self-start md:self-auto bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-md shadow transition">
+          Go to Checkout &amp; Booking →
+        </button>
+      </div>
+
+      <!-- PART 1: 3 CLICKABLE INDIVIDUAL ROOMS (TRIPLE, DOUBLE, FAMILY) -->
+      <div class="mb-14">
+        <div class="mb-6">
+          <span class="text-xs uppercase tracking-widest text-gold-700 font-bold">Options 1 – 3 • Click Any Room Card to Open 4 Photos &amp; Full Room Details</span>
+          <h2 class="font-serif text-2xl sm:text-4xl text-forest-900 font-semibold mt-0.5">Individual Chalet Rooms (Room Only)</h2>
+        </div>
+        <div id="rooms-page-clickable-grid" class="grid grid-cols-1 md:grid-cols-3 gap-7"></div>
+      </div>
+
+      <!-- PART 2: 2 NON-CLICKABLE ALL-INCLUSIVE PACKAGES (FULL BOARD & ENTIRE PLACE) -->
+      <div class="mb-14">
+        <div class="mb-6">
+          <span class="text-xs uppercase tracking-widest text-gold-700 font-bold">Options 4 – 5 • All-Inclusive Sanctuary Packages</span>
+          <h2 class="font-serif text-2xl sm:text-4xl text-forest-900 font-semibold mt-0.5">Full Board &amp; Entire Villa Packages</h2>
+        </div>
+        <div id="rooms-page-packages-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+      </div>
+
+      <!-- PART 3: MEAL PLAN RATE SHEET & CANCELLATION POLICY -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <!-- Meal Plan Box -->
+        <div class="lg:col-span-6 bg-forest-900 text-white rounded-xl p-8 border border-forest-800 shadow-md flex flex-col justify-between">
+          <div>
+            <span class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold">For Room-Only Stays (Triple, Double &amp; Family Rooms)</span>
+            <h3 class="font-serif text-3xl text-white font-semibold mt-1">Meal Plan (Per Person)</h3>
+            <p class="text-xs text-cream-200/85 mt-2">
+              When booking a Room-Only chalet, you can choose how many persons require Breakfast, Lunch, or Dinner directly on the Checkout page.
+            </p>
+            <div class="mt-6 space-y-3 border-t border-forest-800 pt-4 text-sm">
+              <div class="flex items-center justify-between py-2.5 border-b border-forest-800">
+                <span class="font-medium text-cream-100">Breakfast</span>
+                <span id="rooms-meal-bf" class="font-serif text-2xl text-gold-300 font-semibold">Rs. 2,000 <span class="text-xs font-sans text-cream-200">/ person</span></span>
+              </div>
+              <div class="flex items-center justify-between py-2.5 border-b border-forest-800">
+                <span class="font-medium text-cream-100">Lunch</span>
+                <span id="rooms-meal-ln" class="font-serif text-2xl text-gold-300 font-semibold">Rs. 3,000 <span class="text-xs font-sans text-cream-200">/ person</span></span>
+              </div>
+              <div class="flex items-center justify-between py-2.5 border-b border-forest-800">
+                <div>
+                  <span class="font-medium text-cream-100 block">Dinner</span>
+                  <span class="text-[11px] text-gold-400 italic">* Includes Tea</span>
+                </div>
+                <span id="rooms-meal-dn" class="font-serif text-2xl text-gold-300 font-semibold">Rs. 3,000 <span class="text-xs font-sans text-cream-200">/ person</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-forest-800 text-xs text-gold-300 font-medium">
+            * All rates subject to 10% Service Charge and applicable Government Taxes. Subject to availability.
+          </div>
+        </div>
+
+        <!-- Cancellation Policy Box -->
+        <div class="lg:col-span-6 bg-white rounded-xl p-8 border border-cream-300 shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="text-xs uppercase tracking-[0.2em] text-forest-700 font-bold">Reservation Terms</span>
+            <h3 class="font-serif text-3xl text-forest-900 font-semibold mt-1">Cancellation Policy</h3>
+            <ul class="mt-6 space-y-3.5 text-sm text-wood-700">
+              <li class="flex items-start gap-3 p-3.5 rounded-lg bg-cream-100 border border-cream-200">
+                <span class="text-gold-700 font-bold">●</span>
+                <span>A <strong>50% refund</strong> will be made for cancellations received <strong>48hrs before date of arrival</strong>, No refund thereafter.</span>
+              </li>
+              <li class="flex items-start gap-3 p-3.5 rounded-lg bg-cream-100 border border-cream-200">
+                <span class="text-gold-700 font-bold">●</span>
+                <span>A <strong>full refund</strong> will be made for cancellations received <strong>10 days before date of arrival</strong>.</span>
+              </li>
+              <li class="flex items-start gap-3 p-3.5 rounded-lg bg-cream-100 border border-cream-200">
+                <span class="text-gold-700 font-bold">●</span>
+                <span>In an event of <strong>No show</strong>, Total cost of the stay will be billed.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cream-200 flex flex-wrap items-center justify-between gap-3">
+            <button onclick="openAccessRoutesModal()" class="text-xs uppercase tracking-widest font-bold text-forest-800 hover:text-gold-700 underline underline-offset-4">
+              🗺️ View Access Routes
+            </button>
+            <button onclick="navigateTo('booking')" class="bg-forest-900 hover:bg-forest-800 text-gold-300 font-semibold text-xs uppercase tracking-widest px-6 py-3.5 rounded-md transition">
+              Proceed to Checkout →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 2B: DEDICATED INDIVIDUAL ROOM DETAIL PAGE (#page-room-detail)-->
+    <!--          (Opens ONLY for 1. Triple, 2. Double, 3. Family Room)    -->
+    <!-- ================================================================= -->
+    <section id="page-room-detail" class="page-view py-10 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <button onclick="navigateTo('rooms')" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-forest-900 hover:text-gold-700 bg-white border border-cream-300 px-4 py-2.5 rounded-md shadow-sm transition">
+          ← Back to Rooms &amp; Packages
+        </button>
+        <span class="text-xs uppercase tracking-widest bg-forest-900 text-gold-300 px-3.5 py-1.5 rounded-md font-semibold">
+          Individual Chalet • 4 Photos &amp; Room Benefits
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- Left 7 Cols: 4-Photo Interactive Gallery -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="bg-white p-2.5 rounded-xl border border-cream-300 shadow-sm">
+            <div class="h-80 sm:h-[440px] rounded-lg overflow-hidden bg-forest-900 relative">
+              <img
+                id="detail-main-img"
+                src=""
+                alt="Room Main View"
+                onclick="openLightbox(this.src, document.getElementById('detail-room-title').innerText)"
+                class="cursor-pointer w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <!-- 4 Interactive Thumbnails -->
+          <div id="detail-thumbs-grid" class="grid grid-cols-4 gap-3"></div>
+        </div>
+
+        <!-- Right 5 Cols: Room Specs, Benefits & Direct Booking CTA -->
+        <div class="lg:col-span-5 flex flex-col justify-between bg-white p-7 sm:p-9 rounded-xl border border-cream-300 shadow-sm">
+          <div class="space-y-5">
+            <div>
+              <span class="text-[11px] uppercase tracking-widest text-gold-700 font-bold">Room Only Accommodation</span>
+              <h1 id="detail-room-title" class="font-serif text-3xl sm:text-4xl text-forest-900 font-semibold mt-0.5"></h1>
+              <div class="mt-2 flex items-baseline gap-2">
+                <span id="detail-room-price" class="font-serif text-3xl font-bold text-gold-700"></span>
+                <span class="text-xs text-wood-500 uppercase tracking-wider">/ Per Night (Room Only)</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-forest-50 border border-forest-100">
+              <span class="text-[11px] uppercase tracking-widest text-forest-800 font-bold block mb-1">Bed Configuration &amp; Bathroom / Verandah</span>
+              <p id="detail-room-specs" class="text-sm font-semibold text-forest-950"></p>
+            </div>
+
+            <p id="detail-room-desc" class="text-sm text-wood-700 leading-relaxed"></p>
+
+            <div>
+              <h3 class="text-xs uppercase tracking-widest text-forest-800 font-bold mb-3">Room Benefits &amp; Sanctuary Features</h3>
+              <ul id="detail-room-benefits" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-wood-700"></ul>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-cream-200 space-y-3">
+            <button id="detail-book-btn" class="w-full bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-xs uppercase tracking-[0.16em] py-4 rounded-md shadow-md transition">
+              Book This Room &amp; Select Meals / Activities →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 3: EXPERIENCES, VILLAGE & NEARBY ATTRACTIONS (#page-attractions) -->
+    <!-- ================================================================= -->
+    <section id="page-attractions" class="page-view py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+      <div class="border-b border-cream-300 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-[0.2em] text-forest-700 font-bold">Kukuleganga, Ayagama</span>
+          <h1 class="font-serif text-4xl sm:text-6xl text-forest-900 font-semibold mt-1">Experiences &amp; Attractions</h1>
+          <p class="text-wood-700 text-sm sm:text-base mt-2 max-w-3xl">
+            Explore activities inside the Rainforest Retreat, authentic village life in Kukuleganga, and waterfalls, UNESCO caves, and the Rocking Bridge nearby.
+          </p>
+        </div>
+        <button onclick="navigateTo('booking')" class="self-start md:self-auto bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-md shadow transition">
+          Customize Activities in Checkout →
+        </button>
+      </div>
+
+      <!-- SECTION 1: INSIDE THE RAINFOREST RETREAT (9 ITEMS) -->
+      <div>
+        <div class="mb-8">
+          <span class="text-xs uppercase tracking-widest text-gold-700 font-bold">01 • On-Premises Sanctuary Activities</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-forest-900 font-semibold mt-0.5">Inside the Rainforest Retreat</h2>
+          <p class="text-xs sm:text-sm text-wood-700 mt-1">
+            You can select any of these 9 in-house activities to include in your booking. For Bird watching, click the PDF button to go straight to our 1-Hour Bird Logbook PDF.
+          </p>
+        </div>
+        <div id="attractions-inside-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+      </div>
+
+      <!-- SECTION 2: IN THE VILLAGE (6 ITEMS) -->
+      <div class="pt-8 border-t border-cream-300">
+        <div class="mb-8">
+          <span class="text-xs uppercase tracking-widest text-gold-700 font-bold">02 • Rural Cultural Immersion</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-forest-900 font-semibold mt-0.5">In the Village</h2>
+          <p class="text-xs sm:text-sm text-wood-700 mt-1">
+            Authentic village experiences surrounding Kukuleganga, Ayagama.
+          </p>
+        </div>
+        <div id="attractions-village-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+      </div>
+
+      <!-- SECTION 3: ATTRACTIONS NEARBY — OUTSIDE THE VILLAGE (5 ITEMS INCL. ROCKING BRIDGE) -->
+      <div class="pt-8 border-t border-cream-300">
+        <div class="mb-8">
+          <span class="text-xs uppercase tracking-widest text-gold-700 font-bold">03 • Outside the Village</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-forest-900 font-semibold mt-0.5">Attractions Nearby</h2>
+          <p class="text-xs sm:text-sm text-wood-700 mt-1">
+            Famous waterfalls, prehistoric caves, ancient temples, and the Rocking Bridge located outside the village.
+          </p>
+        </div>
+        <div id="attractions-nearby-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 4: COMMUNITY & MISSION (#page-community)                     -->
+    <!-- ================================================================= -->
+    <section id="page-community" class="page-view py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-14">
+      <div class="border-b border-cream-300 pb-8">
+        <span class="text-xs uppercase tracking-[0.2em] text-forest-700 font-bold">Sustainable Development • Kukuleganga, Ayagama</span>
+        <h1 class="font-serif text-4xl sm:text-6xl text-forest-900 font-semibold mt-1">Mission &amp; Community Impact</h1>
+        <p class="text-wood-700 text-sm sm:text-base mt-2 max-w-3xl">
+          Protecting nature's healing energy and supporting the local village community for sustainable development.
+        </p>
+      </div>
+
+      <!-- Mission of the Rainforest Retreat (Gaya Hapuarachchi) -->
+      <div class="bg-forest-900 text-white rounded-2xl p-8 sm:p-12 border border-gold-500/40 shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-4">
+          <div class="h-64 sm:h-72 rounded-xl overflow-hidden bg-forest-950 border border-forest-700">
+            <img
+              id="community-mission-img"
+              src="images/community/mission-founder.jpg"
+              alt="Mission of the Rainforest Retreat — Gaya Hapuarachchi"
+              class="w-full h-full object-cover"
+              onerror="handleArchImageFallback(this, 'images/community/mission-founder.jpg', 'Mission of the Rainforest Retreat')"
+            />
+          </div>
+        </div>
+        <div class="lg:col-span-8 space-y-4">
+          <span class="text-xs uppercase tracking-[0.22em] text-gold-400 font-semibold block">Our Guiding Vision</span>
+          <h2 class="font-serif text-3xl sm:text-5xl text-white font-semibold">Mission of the Rainforest Retreat</h2>
+          <p class="text-cream-100/95 text-base sm:text-lg leading-relaxed font-serif italic">
+            Behind the Rainforest Retreat's becoming of an authentic and refreshing, nature-oriented experience, lies the resilience and passion of Gaya Hapuarachchi. It was her dream to one day create "a holiday haven set in the midst of a lush unspoiled environment, with water flowing through a landscape of trees and abundant greenery", that drove more than a decade-worth of efforts and hard-won gains, translating dream to reality.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Community Sustainability Pillars -->
+      <div>
+        <div class="mb-8">
+          <span class="text-xs uppercase tracking-widest text-gold-700 font-bold">Supporting the Village Community</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-forest-900 font-semibold mt-0.5">Our Four Community Initiatives</h2>
+        </div>
+        <div id="community-pillars-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 5: PHOTO GALLERY (#page-gallery)                             -->
+    <!-- ================================================================= -->
+    <section id="page-gallery" class="page-view py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
+      <div class="border-b border-cream-300 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-[0.2em] text-forest-700 font-bold">Visual Sanctuary</span>
+          <h1 class="font-serif text-4xl sm:text-6xl text-forest-900 font-semibold mt-1">Photo Gallery</h1>
+          <p class="text-wood-700 text-sm sm:text-base mt-2 max-w-2xl">
+            Glimpses of our rainforest chalets, crystal streams, endemic birds, village life, and community initiatives in Kukuleganga, Ayagama.
+          </p>
+        </div>
+        <!-- Category Filters -->
+        <div id="gallery-filter-bar" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div id="gallery-items-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 6: SMART CHECKOUT & BOOKING PAGE (#page-booking)             -->
+    <!-- ================================================================= -->
+    <section id="page-booking" class="page-view py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="border-b border-cream-300 pb-8 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs uppercase tracking-[0.2em] text-forest-700 font-bold">Direct Sanctuary Checkout • Kukuleganga, Ayagama</span>
+          <h1 class="font-serif text-4xl sm:text-6xl text-forest-900 font-semibold mt-1">Check Availability &amp; Book Your Stay</h1>
+          <p class="text-sm sm:text-base text-wood-700 mt-2 max-w-3xl">
+            Select your dates, room or package, per-person meal counts (for Room-Only stays), and the <strong>In-House Retreat Activities</strong> you would like to experience.
+          </p>
+        </div>
+        <button onclick="openAccessRoutesModal()" class="self-start md:self-auto inline-flex items-center gap-2 bg-forest-900 hover:bg-forest-800 text-gold-300 text-xs uppercase tracking-widest font-semibold px-5 py-3.5 rounded-md shadow transition">
+          🗺️ View Access Routes Popup
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <!-- LEFT 7 COLS: 5-STEP INTERACTIVE CHECKOUT FORM -->
+        <div class="lg:col-span-7 space-y-8">
+
+          <!-- STEP 1: GUEST & STAY DETAILS -->
+          <div class="bg-white rounded-xl border border-cream-300 p-6 sm:p-8 shadow-sm space-y-5">
+            <div class="flex items-center justify-between border-b border-cream-200 pb-3">
+              <h2 class="font-serif text-2xl sm:text-3xl text-forest-900 font-semibold">Step 1: Guest &amp; Stay Dates</h2>
+              <span class="text-xs uppercase tracking-wider text-gold-700 font-bold">Required</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">Your Full Name *</label>
+                <input id="bk-name" type="text" placeholder="e.g. Kasun Perera / Sarah Miller" oninput="updateBookingCalculation()" class="w-full px-3.5 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">WhatsApp / Phone Number *</label>
+                <input id="bk-phone" type="tel" placeholder="e.g. +94 77 123 4567" oninput="updateBookingCalculation()" class="w-full px-3.5 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">Email Address</label>
+                <input id="bk-email" type="email" placeholder="yourname@email.com" oninput="updateBookingCalculation()" class="w-full px-3.5 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">City / Country</label>
+                <input id="bk-country" type="text" placeholder="e.g. Colombo, Sri Lanka" oninput="updateBookingCalculation()" class="w-full px-3.5 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">Check-In Date *</label>
+                <input id="bk-checkin" type="date" onchange="updateBookingCalculation()" class="w-full px-3 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">Check-Out Date *</label>
+                <input id="bk-checkout" type="date" onchange="updateBookingCalculation()" class="w-full px-3 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">Total Guests *</label>
+                <input id="bk-guests" type="number" min="1" max="30" value="2" oninput="updateBookingCalculation()" class="w-full px-3 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm font-semibold" />
+              </div>
+              <div>
+                <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">Rooms / Units</label>
+                <input id="bk-units" type="number" min="1" max="10" value="1" oninput="updateBookingCalculation()" class="w-full px-3 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm font-semibold" />
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: SELECT ROOM OR PACKAGE (IN STRICT 1-5 SEQUENCE) -->
+          <div class="bg-white rounded-xl border border-cream-300 p-6 sm:p-8 shadow-sm space-y-5">
+            <div class="flex items-center justify-between border-b border-cream-200 pb-3">
+              <h2 class="font-serif text-2xl sm:text-3xl text-forest-900 font-semibold">Step 2: Select Room or Package</h2>
+              <span class="text-xs text-wood-500">Options 1 to 5</span>
+            </div>
+
+            <div class="space-y-3" id="bk-package-cards-list"></div>
+
+            <!-- Package Rule Notice Banner (Shown for Full Board or Entire Place) -->
+            <div id="bk-package-rule-banner" class="hidden p-4 rounded-lg bg-forest-50 border border-forest-600/30 text-xs text-forest-900 space-y-1"></div>
+          </div>
+
+          <!-- STEP 3: CONDITIONAL MEAL PLAN SELECTOR (SHOWN ONLY FOR ROOM-ONLY PLANS 1, 2, 3) -->
+          <div id="bk-meal-plan-wrapper" class="bg-white rounded-xl border border-cream-300 p-6 sm:p-8 shadow-sm space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-cream-200 pb-3">
+              <div>
+                <span class="text-[11px] uppercase tracking-widest text-gold-700 font-bold">Step 3 • Only for Room-Only Plans</span>
+                <h2 class="font-serif text-2xl sm:text-3xl text-forest-900 font-semibold">Customize Daily Meal Plan (Per Person)</h2>
+              </div>
+              <span class="text-xs bg-cream-100 border border-cream-300 px-3 py-1 rounded text-wood-700">Choose number of persons per meal</span>
+            </div>
+
+            <p class="text-xs text-wood-700">
+              Select how many persons in your group require <strong>Breakfast</strong>, <strong>Lunch</strong>, or <strong>Dinner (includes Tea)</strong> per day. Leave at <code>0</code> if not needed.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <!-- Breakfast Counter -->
+              <div class="p-4 rounded-xl bg-cream-100 border border-cream-300 flex flex-col justify-between">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-forest-900 block">Breakfast</span>
+                  <span id="bk-rate-lbl-bf" class="text-sm font-serif font-bold text-gold-700">Rs. 2,000 / person</span>
+                </div>
+                <div class="mt-4 flex items-center justify-between bg-white rounded-lg border border-cream-300 p-1.5">
+                  <button type="button" onclick="adjustMealCount('bf', -1)" class="w-8 h-8 rounded bg-cream-200 hover:bg-forest-900 hover:text-white font-bold text-sm transition">−</button>
+                  <div class="text-center">
+                    <input id="bk-meal-bf" type="number" min="0" max="30" value="0" oninput="updateBookingCalculation()" class="w-12 text-center font-bold text-sm focus:outline-none" />
+                    <span class="block text-[10px] text-wood-500">persons</span>
+                  </div>
+                  <button type="button" onclick="adjustMealCount('bf', 1)" class="w-8 h-8 rounded bg-forest-900 text-gold-300 hover:bg-forest-800 font-bold text-sm transition">+</button>
+                </div>
+              </div>
+
+              <!-- Lunch Counter -->
+              <div class="p-4 rounded-xl bg-cream-100 border border-cream-300 flex flex-col justify-between">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-forest-900 block">Lunch</span>
+                  <span id="bk-rate-lbl-ln" class="text-sm font-serif font-bold text-gold-700">Rs. 3,000 / person</span>
+                </div>
+                <div class="mt-4 flex items-center justify-between bg-white rounded-lg border border-cream-300 p-1.5">
+                  <button type="button" onclick="adjustMealCount('ln', -1)" class="w-8 h-8 rounded bg-cream-200 hover:bg-forest-900 hover:text-white font-bold text-sm transition">−</button>
+                  <div class="text-center">
+                    <input id="bk-meal-ln" type="number" min="0" max="30" value="0" oninput="updateBookingCalculation()" class="w-12 text-center font-bold text-sm focus:outline-none" />
+                    <span class="block text-[10px] text-wood-500">persons</span>
+                  </div>
+                  <button type="button" onclick="adjustMealCount('ln', 1)" class="w-8 h-8 rounded bg-forest-900 text-gold-300 hover:bg-forest-800 font-bold text-sm transition">+</button>
+                </div>
+              </div>
+
+              <!-- Dinner Counter -->
+              <div class="p-4 rounded-xl bg-cream-100 border border-cream-300 flex flex-col justify-between">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-forest-900 block">Dinner <span class="text-[10px] font-normal text-wood-500">(+Tea)</span></span>
+                  <span id="bk-rate-lbl-dn" class="text-sm font-serif font-bold text-gold-700">Rs. 3,000 / person</span>
+                </div>
+                <div class="mt-4 flex items-center justify-between bg-white rounded-lg border border-cream-300 p-1.5">
+                  <button type="button" onclick="adjustMealCount('dn', -1)" class="w-8 h-8 rounded bg-cream-200 hover:bg-forest-900 hover:text-white font-bold text-sm transition">−</button>
+                  <div class="text-center">
+                    <input id="bk-meal-dn" type="number" min="0" max="30" value="0" oninput="updateBookingCalculation()" class="w-12 text-center font-bold text-sm focus:outline-none" />
+                    <span class="block text-[10px] text-wood-500">persons</span>
+                  </div>
+                  <button type="button" onclick="adjustMealCount('dn', 1)" class="w-8 h-8 rounded bg-forest-900 text-gold-300 hover:bg-forest-800 font-bold text-sm transition">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notice Shown When Meals Are Already Included (Full Board / Entire Place) -->
+          <div id="bk-meals-included-notice" class="hidden bg-forest-900 text-white rounded-xl p-6 border border-gold-500/40">
+            <span class="text-xs uppercase tracking-widest text-gold-400 font-bold block">Step 3 • Meal Plan Included</span>
+            <h3 class="font-serif text-2xl text-white font-semibold mt-1">Meals Are Included in Your Selected Package</h3>
+            <p id="bk-meals-included-desc" class="text-xs text-cream-200 mt-1 leading-relaxed"></p>
+          </div>
+
+          <!-- STEP 4: SELECT IN-HOUSE RETREAT ACTIVITIES (INSIDE THE RAINFOREST RETREAT ONLY) -->
+          <div class="bg-white rounded-xl border border-cream-300 p-6 sm:p-8 shadow-sm space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-cream-200 pb-3">
+              <div>
+                <span class="text-[11px] uppercase tracking-widest text-forest-700 font-bold">Step 4 • On-Premises Sanctuary Experiences</span>
+                <h2 class="font-serif text-2xl sm:text-3xl text-forest-900 font-semibold">Select In-House Retreat Activities</h2>
+              </div>
+              <span id="bk-selected-activities-count" class="text-xs font-bold bg-forest-900 text-gold-300 px-3 py-1 rounded">0 Selected</span>
+            </div>
+
+            <p class="text-xs text-wood-700">
+              Choose the activities conducted <strong>inside the Rainforest Retreat</strong> that you would like us to arrange during your stay:
+            </p>
+
+            <div id="bk-inside-activities-selector" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5"></div>
+          </div>
+
+          <!-- STEP 5: SPECIAL NOTES & ACCESS ROUTES POPUP TRIGGER -->
+          <div class="bg-white rounded-xl border border-cream-300 p-6 sm:p-8 shadow-sm space-y-5">
+            <h2 class="font-serif text-2xl sm:text-3xl text-forest-900 font-semibold border-b border-cream-200 pb-3">
+              Step 5: Special Notes &amp; Arrival Directions
+            </h2>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1.5">Additional Notes / Dietary Preferences / Arrival Time</label>
+              <textarea id="bk-notes" rows="3" placeholder="Let us know your estimated arrival time, dietary needs, or if you need a Three-Wheeler transfer for the final 2 km..." oninput="updateBookingCalculation()" class="w-full px-3.5 py-2.5 rounded-md border border-cream-300 focus:border-forest-800 focus:outline-none text-sm"></textarea>
+            </div>
+
+            <!-- Prominent Access Routes Popup Button at Bottom of Booking Form -->
+            <div class="p-4 rounded-xl bg-cream-100 border border-gold-500/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs uppercase tracking-wider text-forest-900 font-bold block">🚗 How to Get to Rainforest Retreat (Access Routes)</span>
+                <span class="text-xs text-wood-700">Click to view routes from Expressway, Colombo &amp; Ratnapura + Final 2 km 4WD / Three-Wheeler notice.</span>
+              </div>
+              <button type="button" onclick="openAccessRoutesModal()" class="shrink-0 bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-xs uppercase tracking-wider px-5 py-3.5 rounded-md shadow transition">
+                🗺️ Open Access Routes Popup
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT 5 COLS: STICKY LIVE ESTIMATE & WHATSAPP / EMAIL DISPATCH -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="lg:sticky lg:top-24 space-y-6">
+            <div class="bg-forest-900 text-white rounded-xl p-6 sm:p-8 border-2 border-gold-500/40 shadow-xl space-y-5">
+              <div class="border-b border-forest-800 pb-4 flex items-center justify-between">
+                <div>
+                  <span class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold">Live Checkout Summary</span>
+                  <h3 class="font-serif text-3xl text-white font-semibold mt-0.5">Your Stay Breakdown</h3>
+                </div>
+                <span id="bk-nights-badge" class="text-xs font-bold bg-gold-500 text-forest-950 px-3 py-1 rounded">1 Night</span>
+              </div>
+
+              <!-- Itemized Lines -->
+              <div id="bk-summary-breakdown" class="space-y-2.5 text-xs sm:text-sm text-cream-100"></div>
+
+              <!-- Total Line -->
+              <div class="border-t border-forest-800 pt-4 flex items-baseline justify-between">
+                <div>
+                  <span class="text-xs uppercase tracking-wider text-gold-300 font-semibold block">Estimated Total (incl. 10% SC)</span>
+                  <span class="text-[11px] text-cream-200/75">* Applicable Govt. taxes extra</span>
+                </div>
+                <span id="bk-total-display" class="font-serif text-3xl sm:text-4xl font-bold text-gold-400">Rs. 24,200</span>
+              </div>
+
+              <!-- Easy-to-Understand Formatted Message Preview -->
+              <div>
+                <div class="flex items-center justify-between text-[11px] text-gold-300 mb-1.5">
+                  <span class="font-semibold uppercase tracking-wider">Formatted Message Preview:</span>
+                  <button type="button" onclick="copyBookingMessage()" class="underline hover:text-white">Copy Message</button>
+                </div>
+                <pre id="bk-message-preview" class="bg-forest-950 border border-forest-800 rounded-lg p-3.5 text-[11px] text-cream-100 whitespace-pre-wrap font-mono max-h-52 overflow-y-auto leading-relaxed"></pre>
+              </div>
+
+              <!-- Primary Action Buttons -->
+              <div class="space-y-3 pt-2">
+                <button type="button" onclick="sendBookingWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-forest-950 font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-5 rounded-md shadow-lg flex items-center justify-center gap-2 transition">
+                  <span>💬 Send to WhatsApp (+94 71 235 9694)</span>
+                </button>
+                <button type="button" onclick="sendBookingEmail()" class="w-full bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs sm:text-sm uppercase tracking-wider py-4 px-5 rounded-md shadow-md flex items-center justify-center gap-2 transition">
+                  <span>✉️ Send E-mail (rr.kukule@gmail.com)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Cancellation Policy Card -->
+            <div class="bg-white rounded-xl p-6 border border-cream-300 text-xs text-wood-700 space-y-2.5 shadow-sm">
+              <h4 class="font-serif text-2xl text-forest-900 font-semibold">Cancellation Policy</h4>
+              <p>● A <strong>50% refund</strong> will be made for cancellations received <strong>48hrs before date of arrival</strong>, No refund thereafter.</p>
+              <p>● A <strong>full refund</strong> will be made for cancellations received <strong>10 days before date of arrival</strong>.</p>
+              <p>● In an event of <strong>No show</strong>, Total cost of the stay will be billed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- PAGE 7: COMPLETE ADMIN CMS (#page-admin)                          -->
+    <!-- ================================================================= -->
+    <section id="page-admin" class="page-view py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <!-- ADMIN LOGIN CARD (NO PASSWORD HINT DISPLAYED) -->
+      <div id="admin-login-box" class="max-w-md mx-auto bg-white rounded-2xl border border-cream-300 p-8 shadow-md space-y-6">
+        <div class="text-center space-y-1">
+          <span class="text-xs uppercase tracking-[0.2em] text-forest-700 font-bold">Sanctuary Management</span>
+          <h1 class="font-serif text-3xl text-forest-900 font-semibold">Admin Login</h1>
+          <p class="text-xs text-wood-500">Enter your credentials to manage prices, currency rates, photos, and settings.</p>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1">Username</label>
+            <input id="admin-user-input" type="text" placeholder="Username" class="w-full px-3.5 py-2.5 rounded-md border border-cream-300 text-sm focus:outline-none focus:border-forest-800" />
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-wood-700 font-semibold mb-1">Password</label>
+            <input id="admin-pass-input" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter') handleAdminLogin();" class="w-full px-3.5 py-2.5 rounded-md border border-cream-300 text-sm focus:outline-none focus:border-forest-800" />
+          </div>
+          <p id="admin-login-error" class="hidden text-xs text-red-600 font-semibold"></p>
+          <button type="button" onclick="handleAdminLogin()" class="w-full bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-xs uppercase tracking-widest py-3.5 rounded-md transition">
+            Sign In to Admin Panel
+          </button>
+        </div>
+      </div>
+
+      <!-- ADMIN DASHBOARD CONTENT -->
+      <div id="admin-dashboard-box" class="hidden space-y-8">
+        <div class="bg-forest-900 text-white p-6 sm:p-8 rounded-2xl flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="text-xs uppercase tracking-widest text-gold-400 font-semibold">Rainforest Retreat CMS</span>
+            <h1 class="font-serif text-3xl sm:text-4xl text-white font-semibold mt-0.5">Website Content &amp; Photo Manager</h1>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <button onclick="saveAdminDataToStorage()" class="bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-md">
+              💾 Save All Changes
+            </button>
+            <button onclick="resetAdminDataToDefaults()" class="bg-forest-800 hover:bg-forest-700 text-cream-100 text-xs uppercase tracking-wider px-4 py-2.5 rounded-md border border-forest-700">
+              Reset Defaults
+            </button>
+            <button onclick="handleAdminLogout()" class="bg-red-900/70 hover:bg-red-800 text-white text-xs uppercase tracking-wider px-4 py-2.5 rounded-md">
+              Logout
+            </button>
+          </div>
+        </div>
+
+        <!-- Admin Navigation Tabs -->
+        <div class="flex flex-wrap gap-2 border-b border-cream-300 pb-3">
+          <button onclick="switchAdminTab('rooms')" data-admintab="rooms" class="admin-tab-btn bg-forest-900 text-gold-300 text-xs uppercase tracking-wider font-bold px-4 py-2.5 rounded-md">
+            1. Rooms, Prices &amp; USD/EUR Rates
+          </button>
+          <button onclick="switchAdminTab('activities')" data-admintab="activities" class="admin-tab-btn bg-white text-forest-900 border border-cream-300 text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-md">
+            2. Activities, Nearby &amp; Bird PDF
+          </button>
+          <button onclick="switchAdminTab('community')" data-admintab="community" class="admin-tab-btn bg-white text-forest-900 border border-cream-300 text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-md">
+            3. Home &amp; Community Photos
+          </button>
+          <button onclick="switchAdminTab('gallery')" data-admintab="gallery" class="admin-tab-btn bg-white text-forest-900 border border-cream-300 text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-md">
+            4. Unlimited Gallery Manager
+          </button>
+          <button onclick="switchAdminTab('settings')" data-admintab="settings" class="admin-tab-btn bg-white text-forest-900 border border-cream-300 text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-md">
+            5. Contact, Social &amp; Password
+          </button>
+        </div>
+
+        <!-- TAB 1: ROOMS, RATES & CURRENCY -->
+        <div id="admin-tab-rooms" class="admin-tab-pane space-y-8">
+          <!-- Currency & Meal Rates -->
+          <div class="bg-white p-6 rounded-xl border border-cream-300 shadow-sm space-y-4">
+            <h2 class="font-serif text-2xl text-forest-900 font-semibold">Currency Exchange Rates (USD / EUR) &amp; Meal Plan Prices</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-xs">
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">1 USD ($) in LKR</label>
+                <input id="adm-rate-usd" type="number" class="w-full px-3 py-2 rounded border border-cream-300" onchange="window.siteData.exchangeRates.USD = Number(this.value)||300; saveAdminDataToStorage();" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">1 EUR (€) in LKR</label>
+                <input id="adm-rate-eur" type="number" class="w-full px-3 py-2 rounded border border-cream-300" onchange="window.siteData.exchangeRates.EUR = Number(this.value)||325; saveAdminDataToStorage();" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Breakfast (LKR / person)</label>
+                <input id="adm-meal-bf" type="number" class="w-full px-3 py-2 rounded border border-cream-300" onchange="window.siteData.mealRates.breakfast = Number(this.value)||2000; saveAdminDataToStorage();" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Lunch (LKR / person)</label>
+                <input id="adm-meal-ln" type="number" class="w-full px-3 py-2 rounded border border-cream-300" onchange="window.siteData.mealRates.lunch = Number(this.value)||3000; saveAdminDataToStorage();" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Dinner + Tea (LKR / person)</label>
+                <input id="adm-meal-dn" type="number" class="w-full px-3 py-2 rounded border border-cream-300" onchange="window.siteData.mealRates.dinner = Number(this.value)||3000; saveAdminDataToStorage();" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Rooms & Packages Editor -->
+          <div id="admin-rooms-editor-list" class="space-y-6"></div>
+        </div>
+
+        <!-- TAB 2: ACTIVITIES, ATTRACTIONS & BIRD LOGBOOK PDF -->
+        <div id="admin-tab-activities" class="admin-tab-pane hidden space-y-8">
+          <!-- Direct Bird Watching PDF File Manager -->
+          <div class="bg-forest-900 text-white p-6 rounded-xl border border-gold-500/40 space-y-4">
+            <h2 class="font-serif text-2xl text-gold-300 font-semibold">📖 1-Hour Bird Watching Logbook (Direct PDF Link / Upload)</h2>
+            <p class="text-xs text-cream-200">
+              When a guest clicks the <strong>"1-Hour Bird Logbook (PDF)"</strong> button on the Bird Watching card, it opens this PDF page directly in a new tab.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+              <div class="md:col-span-6">
+                <label class="block text-xs text-gold-300 font-semibold mb-1">PDF File Path or URL</label>
+                <input id="adm-bird-pdf-url" type="text" placeholder="files/bird-logbook.pdf" onchange="window.siteData.settings.birdPdfUrl = this.value; saveAdminDataToStorage();" class="w-full px-3.5 py-2.5 rounded bg-forest-950 border border-forest-700 text-white text-xs" />
+              </div>
+              <div class="md:col-span-3">
+                <label class="cursor-pointer block text-center bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-wider py-2.5 px-4 rounded">
+                  Upload PDF File
+                  <input type="file" accept="application/pdf" class="hidden" onchange="adminUploadBirdPdf(event)" />
+                </label>
+              </div>
+              <div class="md:col-span-3">
+                <button type="button" onclick="openBirdPdfPage()" class="w-full bg-forest-800 hover:bg-forest-700 text-gold-300 border border-gold-500/40 font-semibold text-xs uppercase tracking-wider py-2.5 px-4 rounded">
+                  Test Open PDF Page ↗
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-cream-300 space-y-4">
+            <h3 class="font-serif text-2xl text-forest-900 font-semibold">Inside the Rainforest Retreat (9 Activities)</h3>
+            <div id="admin-inside-activities-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-cream-300 space-y-4">
+            <h3 class="font-serif text-2xl text-forest-900 font-semibold">In the Village (6 Activities)</h3>
+            <div id="admin-village-activities-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-cream-300 space-y-4">
+            <h3 class="font-serif text-2xl text-forest-900 font-semibold">Attractions Nearby — Outside the Village (5 Items)</h3>
+            <div id="admin-nearby-activities-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+          </div>
+        </div>
+
+        <!-- TAB 3: HOME & COMMUNITY PHOTOS -->
+        <div id="admin-tab-community" class="admin-tab-pane hidden space-y-8">
+          <div class="bg-white p-6 rounded-xl border border-cream-300 space-y-4">
+            <h2 class="font-serif text-2xl text-forest-900 font-semibold">Home Page Hero &amp; Story Photos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs" id="admin-home-photos-box"></div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-cream-300 space-y-4">
+            <h2 class="font-serif text-2xl text-forest-900 font-semibold">Community Sustainability Projects (4 Pillars)</h2>
+            <div id="admin-community-pillars-list" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+          </div>
+        </div>
+
+        <!-- TAB 4: UNLIMITED GALLERY MANAGER -->
+        <div id="admin-tab-gallery" class="admin-tab-pane hidden space-y-6">
+          <div class="bg-white p-6 rounded-xl border border-cream-300 space-y-4">
+            <h2 class="font-serif text-2xl text-forest-900 font-semibold">Add New Photo to Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-end text-xs">
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Photo Title</label>
+                <input id="new-gal-title" type="text" placeholder="e.g. Morning Mist at Chalet" class="w-full px-3 py-2 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Category</label>
+                <select id="new-gal-cat" class="w-full px-3 py-2 rounded border border-cream-300">
+                  <option value="Sanctuary & Chalets">Sanctuary &amp; Chalets</option>
+                  <option value="Streams & Nature">Streams &amp; Nature</option>
+                  <option value="Activities & Dining">Activities &amp; Dining</option>
+                  <option value="Birdwatching">Birdwatching</option>
+                  <option value="Community">Community</option>
+                </select>
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Folder Path (e.g. images/gallery/new.jpg)</label>
+                <input id="new-gal-path" type="text" placeholder="images/gallery/photo.jpg" class="w-full px-3 py-2 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="cursor-pointer block text-center bg-cream-200 hover:bg-cream-300 text-forest-900 font-bold py-2 px-3 rounded border border-cream-300">
+                  Or Choose Image File
+                  <input type="file" accept="image/*" class="hidden" onchange="adminAddGalleryFromFile(event)" />
+                </label>
+              </div>
+              <div>
+                <button type="button" onclick="adminAddGalleryByPath()" class="w-full bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold py-2 px-4 rounded uppercase tracking-wider">
+                  + Add Photo
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-cream-300 space-y-4">
+            <h3 class="font-serif text-2xl text-forest-900 font-semibold">Manage Gallery Photos (Edit Name, Category, Reorder ↑ ↓ or Delete)</h3>
+            <div id="admin-gallery-manager-list" class="space-y-3"></div>
+          </div>
+        </div>
+
+        <!-- TAB 5: CONTACT, SOCIAL LINKS & PASSWORD -->
+        <div id="admin-tab-settings" class="admin-tab-pane hidden space-y-6">
+          <div class="bg-white p-6 rounded-xl border border-cream-300 space-y-4 text-xs">
+            <h2 class="font-serif text-2xl text-forest-900 font-semibold">Contact Details, Social Media &amp; Admin Security</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Displayed Address</label>
+                <input id="adm-set-address" type="text" class="w-full px-3.5 py-2.5 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">WhatsApp Number (Digits with country code, e.g. 94712359694)</label>
+                <input id="adm-set-wa" type="text" class="w-full px-3.5 py-2.5 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Reservation Email</label>
+                <input id="adm-set-email" type="email" class="w-full px-3.5 py-2.5 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Facebook Page URL</label>
+                <input id="adm-set-fb" type="url" class="w-full px-3.5 py-2.5 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Instagram Profile URL</label>
+                <input id="adm-set-ig" type="url" placeholder="https://www.instagram.com/..." class="w-full px-3.5 py-2.5 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Admin Username</label>
+                <input id="adm-set-user" type="text" class="w-full px-3.5 py-2.5 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Admin Password</label>
+                <input id="adm-set-pass" type="text" class="w-full px-3.5 py-2.5 rounded border border-cream-300" />
+              </div>
+            </div>
+            <div class="pt-3">
+              <button type="button" onclick="adminSaveGeneralSettings()" class="bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold uppercase tracking-wider px-6 py-3 rounded-md">
+                Save Contact &amp; Security Settings
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================================================================== -->
+  <!-- FLOATING WHATSAPP DIRECT BUTTON (CLEAN & MINIMALISTIC)              -->
+  <!-- =================================================================== -->
+  <a
+    id="floating-wa-btn"
+    href="https://wa.me/94712359694?text=Hello%20Rainforest%20Retreat%20%E2%80%94%20Kukuleganga%2C%20Ayagama!%20I%20would%20like%20to%20inquire%20about%20a%20stay."
+    target="_blank"
+    rel="noopener"
+    title="Chat on WhatsApp (+94 71 235 9694)"
+    class="fixed bottom-20 lg:bottom-6 left-4 sm:left-6 z-40 bg-[#25D366] hover:bg-[#20bd5a] text-forest-950 font-bold text-xs uppercase tracking-wider px-4 py-3 rounded-full shadow-2xl flex items-center gap-2 border-2 border-forest-950 transition"
+  >
+    <span class="text-base leading-none">💬</span>
+    <span class="hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- =================================================================== -->
+  <!-- FOOTER                                                              -->
+  <!-- =================================================================== -->
+  <footer class="bg-forest-950 text-cream-200 border-t-4 border-gold-500 pt-14 pb-24 lg:pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-10 border-b border-forest-800">
+      <div class="lg:col-span-4 space-y-3">
+        <span class="font-serif text-2xl tracking-[0.14em] uppercase text-white font-semibold block">Rainforest Retreat</span>
+        <span id="footer-address-sub" class="text-xs uppercase tracking-[0.22em] text-gold-400 block">Kukuleganga, Ayagama</span>
+        <p class="text-xs text-cream-200/80 leading-relaxed pt-1">
+          Escape into the raptures of the fauna, flora and the flowing streams. A sustainable rainforest sanctuary tucked away amidst the waterways of Kukuleganga, Ayagama.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 space-y-2.5 text-xs">
+        <span class="uppercase tracking-widest text-gold-400 font-semibold block mb-2">Explore</span>
+        <button onclick="navigateTo('home')" class="block hover:text-gold-300">Home &amp; Story</button>
+        <button onclick="navigateTo('rooms')" class="block hover:text-gold-300">Rooms &amp; Packages</button>
+        <button onclick="navigateTo('attractions')" class="block hover:text-gold-300">Experiences &amp; Nearby</button>
+        <button onclick="navigateTo('community')" class="block hover:text-gold-300">Community &amp; Mission</button>
+        <button onclick="navigateTo('gallery')" class="block hover:text-gold-300">Photo Gallery</button>
+        <button onclick="navigateTo('booking')" class="block hover:text-gold-300">Check Availability</button>
+      </div>
+
+      <div class="lg:col-span-5 space-y-2 text-xs">
+        <span class="uppercase tracking-widest text-gold-400 font-semibold block mb-2">Direct Reservations &amp; Location</span>
+        <p id="footer-address-line" class="text-cream-100 font-semibold">Kukuleganga, Ayagama, Sri Lanka</p>
+        <p>WhatsApp / Phone: <a id="footer-wa-link" href="https://wa.me/94712359694" class="text-gold-300 font-semibold">+94 71 235 9694</a></p>
+        <p>Email: <a id="footer-email-link" href="mailto:rr.kukule@gmail.com" class="text-gold-300 font-semibold">rr.kukule@gmail.com</a></p>
+        <div class="pt-3 flex flex-wrap gap-2.5">
+          <a id="footer-wa-btn" href="https://wa.me/94712359694" target="_blank" rel="noopener" class="bg-[#25D366] hover:bg-[#20bd5a] text-forest-950 font-bold px-4 py-2 rounded uppercase tracking-wider">
+            💬 WhatsApp
+          </a>
+          <button onclick="openAccessRoutesModal()" class="bg-forest-800 hover:bg-forest-700 text-gold-300 px-4 py-2 rounded border border-forest-700 uppercase tracking-wider font-semibold">
+            Access Routes
+          </button>
+          <a id="footer-fb-link" href="https://www.facebook.com/rainforestretreatlk" target="_blank" rel="noopener" class="bg-forest-900 hover:bg-forest-800 text-white px-4 py-2 rounded border border-forest-700">Facebook</a>
+          <a id="footer-ig-link" href="#instagram" target="_blank" rel="noopener" class="bg-forest-900 hover:bg-forest-800 text-white px-4 py-2 rounded border border-forest-700">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex flex-wrap items-center justify-between text-[11px] text-cream-200/60">
+      <span>© Rainforest Retreat — Kukuleganga, Ayagama. All Rights Reserved.</span>
+      <span>10% Service Charge &amp; Applicable Government Taxes Apply.</span>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BOTTOM NAVIGATION BAR -->
+  <nav class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-forest-950/95 backdrop-blur border-t border-gold-500/40 grid grid-cols-5 text-[10px] text-cream-100">
+    <button onclick="navigateTo('home')" class="py-2.5 flex flex-col items-center justify-center hover:text-gold-300">
+      <span>🏠</span><span class="mt-0.5">Home</span>
+    </button>
+    <button onclick="navigateTo('rooms')" class="py-2.5 flex flex-col items-center justify-center hover:text-gold-300">
+      <span>🛏️</span><span class="mt-0.5">Rooms</span>
+    </button>
+    <button onclick="navigateTo('attractions')" class="py-2.5 flex flex-col items-center justify-center hover:text-gold-300">
+      <span>🌿</span><span class="mt-0.5">Explore</span>
+    </button>
+    <button onclick="navigateTo('gallery')" class="py-2.5 flex flex-col items-center justify-center hover:text-gold-300">
+      <span>📷</span><span class="mt-0.5">Gallery</span>
+    </button>
+    <button onclick="navigateTo('booking')" class="py-2.5 flex flex-col items-center justify-center bg-gold-500 text-forest-950 font-bold">
+      <span>📅</span><span class="mt-0.5">Book</span>
+    </button>
+  </nav>
+
+  <!-- =================================================================== -->
+  <!-- MODAL 1: ACCESS ROUTES & DIRECTIONS POPUP                           -->
+  <!-- =================================================================== -->
+  <div id="access-routes-modal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-cream-50 border-2 border-gold-500 rounded-xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl space-y-6 my-8">
+      <div class="flex items-start justify-between gap-4 border-b border-cream-300 pb-4">
+        <div>
+          <span class="text-xs uppercase tracking-[0.2em] text-forest-700 font-bold">How to Reach Rainforest Retreat</span>
+          <h3 class="font-serif text-3xl text-forest-900 font-semibold mt-0.5">Access Routes</h3>
+          <p class="text-xs text-wood-500 mt-1">Kukuleganga, Ayagama</p>
+        </div>
+        <button onclick="closeAccessRoutesModal()" class="p-2 rounded-md bg-cream-200 hover:bg-forest-900 hover:text-white text-sm font-bold">✕</button>
+      </div>
+
+      <!-- Exact 3 Routes Provided by User -->
+      <div class="space-y-3.5 text-sm text-wood-900">
+        <div class="p-4 rounded-lg bg-white border border-cream-300 shadow-sm">
+          <span class="text-xs uppercase tracking-wider text-gold-700 font-bold block mb-1">Route 01 • Southern Expressway</span>
+          <p>● From Southern Express way Dodangoda Exit. Proceed to Matugama and along the Matugama Kelinkanda Road, upto the ‘Kukule Electricity Distribution Centre’.</p>
+        </div>
+
+        <div class="p-4 rounded-lg bg-white border border-cream-300 shadow-sm">
+          <span class="text-xs uppercase tracking-wider text-gold-700 font-bold block mb-1">Route 02 • From Colombo</span>
+          <p>● Colombo, Ingiriya, Egaloya, Bulathsinhala, Molkawa and to the left upto ‘Kukule Electricity Distribution Centre’.</p>
+        </div>
+
+        <div class="p-4 rounded-lg bg-white border border-cream-300 shadow-sm">
+          <span class="text-xs uppercase tracking-wider text-gold-700 font-bold block mb-1">Route 03 • From Ratnapura</span>
+          <p>● Ratnapura- Along Panadura Road, turn off to Egal oya Road, 1k. m. before Ingiriya town. To Egaloya, Bulathsinhala, Molkawa.</p>
+        </div>
+
+        <!-- Final 2km 4WD / Three-Wheeler Important Highlight -->
+        <div class="p-5 rounded-xl bg-forest-900 text-white border-l-4 border-gold-400 shadow-md">
+          <span class="text-xs uppercase tracking-widest text-gold-400 font-bold block mb-1">⚠️ Final 2 km Access Notice</span>
+          <p class="text-sm leading-relaxed">
+            The <strong>final 2 km</strong> leading to the retreat can <strong>ONLY be accessed by a 4-Wheel Drive (4WD) vehicle or a Three-Wheeler (Tuk-Tuk)</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Google Map Embed -->
+      <div class="rounded-lg overflow-hidden border border-cream-300 h-56 bg-cream-200">
+        <iframe
+          title="Rainforest Retreat Kukulegama Map"
+          src="https://www.google.com/maps?q=Rainforest+retreat,+Kukulegama,+Sri+Lanka&output=embed"
+          class="w-full h-full border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="flex justify-end">
+        <button onclick="closeAccessRoutesModal()" class="bg-forest-900 hover:bg-forest-800 text-gold-300 text-xs uppercase tracking-widest font-semibold px-6 py-3 rounded-md">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- MODAL 2: IMAGE LIGHTBOX                                             -->
+  <!-- =================================================================== -->
+  <div id="lightbox-modal" onclick="closeLightbox()" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4">
+    <div class="max-w-5xl w-full text-center space-y-3" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="" class="max-h-[80vh] mx-auto rounded-lg border border-gold-500/40 object-contain" />
+      <div class="flex items-center justify-between text-cream-100 text-sm px-2">
+        <span id="lightbox-caption" class="font-serif text-xl"></span>
+        <button onclick="closeLightbox()" class="px-4 py-1.5 rounded bg-forest-800 text-gold-300 text-xs uppercase tracking-wider">Close ✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast-box" class="fixed bottom-20 lg:bottom-6 right-6 z-50 hidden bg-forest-900 text-gold-300 border border-gold-500 px-5 py-3.5 rounded-lg shadow-2xl text-xs font-semibold tracking-wide"></div>
+
+  <!-- =================================================================== -->
+  <!-- COMPLETE APPLICATION LOGIC & STATE                                  -->
+  <!-- =================================================================== -->
+  <script>
+    const STORAGE_KEY = 'rainforest_retreat_kukuleganga_v2';
+
+    const DEFAULT_SITE_DATA = {
+      currency: 'LKR',
+      exchangeRates: {
+        USD: 300,
+        EUR: 325
+      },
+      mealRates: {
+        breakfast: 2000,
+        lunch: 3000,
+        dinner: 3000
+      },
+      settings: {
+        address: 'Kukuleganga, Ayagama',
+        whatsapp: '94712359694',
+        email: 'rr.kukule@gmail.com',
+        facebook: 'https://www.facebook.com/rainforestretreatlk',
+        instagram: 'https://www.instagram.com/',
+        birdPdfUrl: 'files/bird-logbook.pdf',
+        adminUser: 'rainforestretreat.lk',
+        adminPass: '123456'
+      },
+      homePhotos: {
+        hero: 'images/hero-cabin.jpg',
+        story1: 'images/verandah-night.jpg',
+        story2: 'images/meditation-stream.jpg',
+        story3: 'images/morning-tea.jpg',
+        mission: 'images/community/mission-founder.jpg'
+      },
+      selectedPackageId: 'triple-room',
+      selectedActivities: ['Bird watching', 'Traditional Clay Pot Cooking'],
+      activeGalleryCategory: 'All',
+
+      // Strict Sequence 1 to 5 for Rooms & Packages
+      roomsAndPackages: [
+        {
+          order: 1,
+          id: 'triple-room',
+          name: 'Room Only - Triple Room',
+          isRoomOnly: true,
+          clickableDetail: true,
+          price: 22000,
+          unitLabel: 'Per Night (Room Only)',
+          specs: '1 double bed, one single bed, attach bathroom with Private verandah',
+          summary: 'Spacious rainforest chalet featuring 1 double bed and 1 single bed, an attached bathroom, and a private verandah opening out to the soothing sounds of hummingbirds and the babbling brook.',
+          benefits: [
+            '1 Double Bed & 1 Single Bed',
+            'Attached Bathroom with Natural Spring Water',
+            'Private Verandah Overlooking Rainforest Canopy',
+            'High-Energy Meditation & Quiet Environment',
+            'Clean Simple Comfort with Mosquito Nets',
+            'Access to Natural Spring Water Pool & Streams'
+          ],
+          images: [
+            'images/rooms/triple-1.jpg',
+            'images/rooms/triple-2.jpg',
+            'images/rooms/triple-3.jpg',
+            'images/rooms/triple-4.jpg'
+          ]
+        },
+        {
+          order: 2,
+          id: 'double-room',
+          name: 'Room Only - Double Room',
+          isRoomOnly: true,
+          clickableDetail: true,
+          price: 15000,
+          unitLabel: 'Per Night (Room Only)',
+          specs: '1 king size bed, 1 single bed, private verandah, attach bathroom',
+          summary: 'Tranquil rainforest chalet with 1 king size bed and 1 single bed, a private verandah, and an attached bathroom surrounded by rare trees and medicinal flora.',
+          benefits: [
+            '1 King Size Bed & 1 Single Bed',
+            'Private Verandah with Forest Views',
+            'Attached Private Bathroom',
+            'Cool Natural Rainforest Breeze',
+            'Clean & Peaceful Off-Grid Sanctuary',
+            'Access to Natural Water Pool & Streams'
+          ],
+          images: [
+            'images/rooms/double-1.jpg',
+            'images/rooms/double-2.jpg',
+            'images/rooms/double-3.jpg',
+            'images/rooms/double-4.jpg'
+          ]
+        },
+        {
+          order: 3,
+          id: 'family-room',
+          name: 'Room Only - Family Room',
+          isRoomOnly: true,
+          clickableDetail: true,
+          price: 30000,
+          unitLabel: 'Per Night (Room Only)',
+          specs: '1 King size bed, 1 small double bed, 1 single bed, family bathroom, private verandah',
+          summary: 'Generous family chalet offering 1 king size bed, 1 small double bed, and 1 single bed, complete with a spacious family bathroom and private verandah.',
+          benefits: [
+            '1 King Size Bed, 1 Small Double Bed & 1 Single Bed',
+            'Spacious Family Bathroom',
+            'Large Private Verandah for Family Relaxation',
+            'Surrounded by Rare Flora & Birdlife',
+            'Access to Natural Spring Water Pool',
+            'Complete Digital Detox & Nature Connection'
+          ],
+          images: [
+            'images/rooms/family-1.jpg',
+            'images/rooms/family-2.jpg',
+            'images/rooms/family-3.jpg',
+            'images/rooms/family-4.jpg'
+          ]
+        },
+        {
+          order: 4,
+          id: 'full-board-pkg',
+          name: 'Full Board Package',
+          isRoomOnly: false,
+          clickableDetail: false,
+          price: 30000,
+          perPersonRate: 15000,
+          unitLabel: 'Display Price (Rs. 15,000 for 1 Person)',
+          specs: 'Meals Included • Minimum 2 persons for 2 days (Rs. 15,000 for one person)',
+          summary: 'Complete rainforest retreat package with meals included. Rate is Rs. 15,000 for one person (Display Price: Rs. 30,000). Minimum 2 persons for 2 days.',
+          benefits: [
+            'Meals Included (Breakfast, Lunch & Dinner)',
+            'Rs. 15,000 for One Person (Display Price Rs. 30,000)',
+            'Rule: Minimum 2 Persons for 2 Days'
+          ],
+          images: ['images/rooms/full-board.jpg']
+        },
+        {
+          order: 5,
+          id: 'entire-place-pkg',
+          name: 'Entire Place with Private Cook',
+          isRoomOnly: false,
+          clickableDetail: false,
+          price: 70000,
+          unitLabel: 'Per Day (Entire Place)',
+          specs: 'Includes 3 meals by our cook • * All provisions to be provided by guest',
+          summary: 'Exclusive booking of the entire Rainforest Retreat with our private cook preparing 3 daily meals (*All provisions to be provided by guest).',
+          benefits: [
+            'Exclusive Use of Entire Place with Private Cook',
+            'Includes 3 Meals by Our Cook',
+            '* All provisions to be provided by guest'
+          ],
+          images: ['images/rooms/entire-villa.jpg']
+        }
+      ],
+
+      // 1. Inside the Rainforest Retreat (9 Items)
+      insideActivities: [
+        {
+          id: 'act-relaxing',
+          title: 'Relaxing',
+          desc: 'Unwind amidst looming rainforest trees, the natural water pool, and the soothing sounds of the babbling brook.',
+          image: 'images/activities/relaxing.jpg'
+        },
+        {
+          id: 'act-painting',
+          title: 'Painting',
+          desc: 'Express your creativity surrounded by unspoiled greenery, rare trees, and tranquil forest light.',
+          image: 'images/activities/painting.jpg'
+        },
+        {
+          id: 'act-photography',
+          title: 'Photography',
+          desc: 'Capture misty rainforest landscapes, rare medicinal flora, butterflies, and crystal-clear streams.',
+          image: 'images/activities/photography.jpg'
+        },
+        {
+          id: 'act-birdwatching',
+          title: 'Bird watching',
+          desc: 'Observe rare and endemic birds within our sanctuary. Click below to open our 1-Hour Bird Logbook PDF directly.',
+          image: 'images/activities/bird-watching.jpg',
+          hasBirdBook: true
+        },
+        {
+          id: 'act-yoga',
+          title: 'Yoga',
+          desc: 'Get into a stance more easily with the rare healing energy felt within our rainforest premises.',
+          image: 'images/activities/yoga.jpg'
+        },
+        {
+          id: 'act-shampoo',
+          title: 'Make your own shampoo',
+          desc: 'Prepare your own natural hair conditioner and shampoo using organic forest plants and herbs.',
+          image: 'images/activities/shampoo.jpg'
+        },
+        {
+          id: 'act-meditation',
+          title: 'Guided Meditation',
+          desc: 'Focus quickly and experience deep mindfulness guided amidst the calm of the Kukuleganga rainforest.',
+          image: 'images/activities/meditation.jpg'
+        },
+        {
+          id: 'act-stress',
+          title: 'Stress releasing',
+          desc: 'Unplug from daily stressors and regenerate your inner energy in a peaceful off-grid setting.',
+          image: 'images/activities/stress-release.jpg'
+        },
+        {
+          id: 'act-claypot',
+          title: 'Traditional Clay Pot Cooking',
+          desc: 'Authentic Sri Lankan village culinary experience cooking flavorful curries in clay pots over a wood fire.',
+          image: 'images/activities/clay-pot-cooking.jpg'
+        }
+      ],
+
+      // 2. In the Village (6 Items)
+      villageActivities: [
+        {
+          id: 'vil-tea',
+          title: 'Tea plucking',
+          desc: 'Walk through lush village tea smallholdings and experience traditional hand-plucking with local growers.',
+          image: 'images/village/tea-plucking.jpg'
+        },
+        {
+          id: 'vil-cinnamon',
+          title: 'Cinnamon peeling',
+          desc: 'Witness the traditional craft of peeling and preparing fragrant Ceylon cinnamon quills in the village.',
+          image: 'images/village/cinnamon-peeling.jpg'
+        },
+        {
+          id: 'vil-toddy',
+          title: 'Toddy tapping',
+          desc: 'Learn about traditional kitul palm tapping and village treacle and jaggery preparation.',
+          image: 'images/village/toddy-tapping.jpg'
+        },
+        {
+          id: 'vil-farm',
+          title: 'Visits to a Working Farm',
+          desc: 'Explore a local working village farm growing organic spices, fruits, and indigenous crops.',
+          image: 'images/village/working-farm.jpg'
+        },
+        {
+          id: 'vil-pinnakola',
+          title: 'Pinnakola Rock Climb',
+          desc: 'Guided trek and climb up Pinnakola Rock for panoramic views over the Kukuleganga rainforest canopy.',
+          image: 'images/village/pinnakola-rock.jpg'
+        },
+        {
+          id: 'vil-birds',
+          title: 'Birds and butterfly watching',
+          desc: 'Guided trails through village streams and forest borders rich in endemic birds and colorful butterflies.',
+          image: 'images/village/birds-butterfly.jpg'
+        }
+      ],
+
+      // 3. Attractions Nearby — Outside the Village (5 Items)
+      nearbyAttractions: [
+        {
+          id: 'near-makeli',
+          title: 'Makeli Ella and many hidden waterfalls',
+          desc: 'Discover cascading Makeli Ella and pristine hidden rainforest waterfalls a short excursion from the village.',
+          image: 'images/nearby/makeli-ella.jpg'
+        },
+        {
+          id: 'near-pahiyangala',
+          title: 'Pahiyangala (UNESCO)',
+          desc: 'Explore the famous Fa-Hien Cave (Pahiyangala), one of South Asia’s most significant prehistoric rock shelters.',
+          image: 'images/nearby/pahiyangala.jpg'
+        },
+        {
+          id: 'near-bridge',
+          title: 'Rocking Bridge',
+          desc: 'Cross the scenic suspension Rocking Bridge spanning the river amidst lush tropical surroundings.',
+          image: 'images/nearby/rocking-bridge.jpg'
+        },
+        {
+          id: 'near-dam',
+          title: 'Kukuleganga Dam',
+          desc: 'Visit the Kukuleganga Dam and reservoir surrounded by mist-covered mountains and waterways.',
+          image: 'images/nearby/kukuleganga-dam.jpg'
+        },
+        {
+          id: 'near-temple',
+          title: 'Ancient Kukuluwa Vihara Temple and more ancient places',
+          desc: 'Experience the serenity and heritage of Ancient Kukuluwa Vihara Temple and historic sites in the region.',
+          image: 'images/nearby/kukuluwa-vihara.jpg'
+        }
+      ],
+
+      // 4 Community Sustainability Pillars
+      communityPillars: [
+        {
+          id: 'comm-bio',
+          title: 'Protecting Bio Diversity',
+          desc: 'Our foremost commitment is safeguarding the rare trees, endemic medicinal plants, natural streams, and over 100 species of birds and fish that call the Kukuleganga rainforest ecosystem home.',
+          image: 'images/community/biodiversity.jpg'
+        },
+        {
+          id: 'comm-youth',
+          title: 'Developing Children / Youth',
+          desc: 'We actively support rural school children and village youth through educational resources, environmental awareness, and skill-building opportunities for a brighter future.',
+          image: 'images/community/children-youth.jpg'
+        },
+        {
+          id: 'comm-women',
+          title: 'Empowering Women / skills',
+          desc: 'By creating fair, dignified livelihoods—from traditional clay-pot culinary arts to herbal crafts and hospitality—we empower local village women and their families.',
+          image: 'images/community/empowering-women.jpg'
+        },
+        {
+          id: 'comm-infra',
+          title: 'Infrastructure & Health',
+          desc: 'Working closely with our remote rural neighbors in Kukuleganga, Ayagama, we contribute toward essential community infrastructure, clean water access, and family well-being.',
+          image: 'images/community/infrastructure-health.jpg'
+        }
+      ],
+
+      // Gallery Items
+      gallery: [
+        { id: 'g1', title: 'Misty Rainforest Cabin Glow', category: 'Sanctuary & Chalets', image: 'images/hero-cabin.jpg' },
+        { id: 'g2', title: 'Chalet Verandah in the Rainforest', category: 'Sanctuary & Chalets', image: 'images/verandah-night.jpg' },
+        { id: 'g3', title: 'Stream Meditation & Healing Energy', category: 'Streams & Nature', image: 'images/meditation-stream.jpg' },
+        { id: 'g4', title: 'Morning Tea in the Canopy', category: 'Activities & Dining', image: 'images/morning-tea.jpg' },
+        { id: 'g5', title: 'Traditional Clay Pot Cooking', category: 'Activities & Dining', image: 'images/activities/clay-pot-cooking.jpg' },
+        { id: 'g6', title: 'Endemic Birdwatching at the Retreat', category: 'Birdwatching', image: 'images/activities/bird-watching.jpg' },
+        { id: 'g7', title: 'Guided Yoga & Mindfulness', category: 'Activities & Dining', image: 'images/activities/yoga.jpg' },
+        { id: 'g8', title: 'Community Sustainability & Village Life', category: 'Community', image: 'images/community/biodiversity.jpg' }
+      ],
+
+      // Exact 4 Guest Reviews
+      reviews: [
+        {
+          author: 'Nathalie Gunawardena',
+          headline: 'A wonderful place to relax, meditate, connect with nature and yourself',
+          text: 'A wonderful place to relax, meditate , connect with nature and yourself. It\'s my second visit. Tasty food and friendly staff. If you want to disconnect from society and your day to day routine, this is the right place. Just 2 hours from Colombo. Looking already forward to my next visit.'
+        },
+        {
+          author: 'Jude Malindra',
+          headline: 'Rare place in Sri Lanka with amazing energy to host healing retreats',
+          text: 'Rainforest Retreat is one of those rare places in Sri Lanka with amazing energy to host healing retreats. It\'s because the visionary founder has thought about preserving the land and community with sustainable buildings and village projects. I have stayed here a few times, sent people to unplug from daily stressors and hosted healing retreats at the Rainforest Retreat - we all agree on one this, the energy is high here. You feel it'
+        },
+        {
+          author: 'AusiTraveller',
+          headline: 'Ideal place to relax and forget about your worries and stress',
+          text: 'This wonderful place was recommended to me by some friends and I can only recommend this location for anyone who would like to have a relaxing time away from busy cities and crowds. It is way, way off the grid and extremely peaceful and quiet place to unwind and regenerate your energy. I just stayed there for 1 night which was far too little time to take in the beauty and tranquillity of this place. The food was great and the host as well as the staff was very friendly. “Natures Gift” is a place close to nature with a minimal infrastructure. The Chalets are very clean and simple with basic amenities but enough to make life reasonably comfortable. The small pool with natural water is a great place to be - even in the night.'
+        },
+        {
+          author: 'studio AK',
+          headline: 'Calm, peaceful and quiet in the middle of the rainforest',
+          text: 'I loved the remoteness, in the middle of rainforest. The area around kukuleganga is very calm , peaceful and quiet. it is a perfect place to unwind and to take a break from city life. The food there was really good. no phone or internet signal, but a good way to disconnect. i will be back'
+        }
+      ]
+    };
+
+    window.siteData = JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+
+    function loadSavedData() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          window.siteData = Object.assign({}, DEFAULT_SITE_DATA, parsed);
+        }
+      } catch (e) {
+        console.warn('Could not load saved state:', e);
+      }
+    }
+
+    function saveAdminDataToStorage() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(window.siteData));
+        renderAllViews();
+        updateBookingCalculation();
+        showToast('Changes saved and updated across the website!');
+      } catch (e) {
+        showToast('Note: File is large for browser storage, but updated in current session.');
+        renderAllViews();
+      }
+    }
+
+    function resetAdminDataToDefaults() {
+      localStorage.removeItem(STORAGE_KEY);
+      window.siteData = JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+      renderAllViews();
+      renderAdminForms();
+      updateBookingCalculation();
+      showToast('Website reset to default content.');
+    }
+
+    // --- DIRECT PDF PAGE NAVIGATION FOR BIRD WATCHING BOOK ---
+    function openBirdPdfPage() {
+      const pdfUrl = (window.siteData.settings && window.siteData.settings.birdPdfUrl) || 'files/bird-logbook.pdf';
+      window.open(pdfUrl, '_blank', 'noopener');
+    }
+
+    // --- CURRENCY FORMATTING ---
+    function formatPrice(lkrAmount) {
+      const amt = Number(lkrAmount) || 0;
+      const cur = window.siteData.currency || 'LKR';
+      if (cur === 'USD') {
+        return '$' + Math.round(amt / (window.siteData.exchangeRates.USD || 300)).toLocaleString();
+      }
+      if (cur === 'EUR') {
+        return '€' + Math.round(amt / (window.siteData.exchangeRates.EUR || 325)).toLocaleString();
+      }
+      return 'Rs. ' + amt.toLocaleString();
+    }
+
+    function changeCurrency(newCur) {
+      window.siteData.currency = newCur;
+      renderAllViews();
+      updateBookingCalculation();
+    }
+
+    function showToast(msg) {
+      const box = document.getElementById('toast-box');
+      if (!box) return;
+      box.textContent = msg;
+      box.classList.remove('hidden');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => box.classList.add('hidden'), 3000);
+    }
+
+    // --- NAVIGATION ---
+    function navigateTo(pageId) {
+      document.querySelectorAll('.page-view').forEach(sec => sec.classList.remove('active'));
+      const target = document.getElementById('page-' + pageId);
+      if (target) target.classList.add('active');
+
+      document.querySelectorAll('.nav-link').forEach(btn => {
+        if (btn.dataset.nav === pageId) {
+          btn.className = 'nav-link text-xs uppercase tracking-[0.15em] text-gold-400 font-semibold transition py-2';
+        } else {
+          btn.className = 'nav-link text-xs uppercase tracking-[0.15em] text-cream-100/85 hover:text-gold-300 transition py-2';
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(observeRevealElements, 60);
+    }
+
+    function toggleMobileDrawer() {
+      const dr = document.getElementById('mobile-drawer');
+      if (dr) dr.classList.toggle('hidden');
+    }
+
+    function proceedFromQuickBar() {
+      const ci = document.getElementById('quick-checkin').value;
+      const co = document.getElementById('quick-checkout').value;
+      const pkg = document.getElementById('quick-package').value;
+      if (ci) document.getElementById('bk-checkin').value = ci;
+      if (co) document.getElementById('bk-checkout').value = co;
+      selectPackageForCheckout(pkg);
+    }
+
+    // --- OPEN INDIVIDUAL ROOM DETAIL PAGE (ONLY FOR ROOMS 1, 2, 3) ---
+    function openRoomDetailPage(roomId) {
+      const rm = window.siteData.roomsAndPackages.find(r => r.id === roomId);
+      if (!rm || !rm.clickableDetail) return;
+
+      document.getElementById('detail-room-title').textContent = rm.order + '. ' + rm.name;
+      document.getElementById('detail-room-price').textContent = formatPrice(rm.price);
+      document.getElementById('detail-room-specs').textContent = rm.specs;
+      document.getElementById('detail-room-desc').textContent = rm.summary;
+
+      const mainImg = document.getElementById('detail-main-img');
+      mainImg.dataset.fallbackDone = '0';
+      mainImg.src = rm.images[0];
+      mainImg.onerror = function() {
+        handleArchImageFallback(this, rm.images[0], rm.name + ' — Photo 1');
+      };
+
+      const thumbsGrid = document.getElementById('detail-thumbs-grid');
+      thumbsGrid.innerHTML = rm.images.map((imgPath, idx) => `
+        <button type="button" onclick="switchRoomDetailPhoto('${safeJsAttr(imgPath)}', '${safeJsAttr(rm.name + ' — Photo ' + (idx + 1))}')" class="h-20 sm:h-24 rounded-lg overflow-hidden border-2 border-cream-300 hover:border-gold-500 bg-forest-900 p-0.5 transition">
+          <img
+            src="${imgPath}"
+            alt="${safeJsAttr(rm.name)}"
+            class="w-full h-full object-cover rounded"
+            onerror="handleArchImageFallback(this, '${safeJsAttr(imgPath)}', '${safeJsAttr(rm.name + ' #' + (idx + 1))}')"
+          />
+        </button>
+      `).join('');
+
+      const benList = document.getElementById('detail-room-benefits');
+      benList.innerHTML = rm.benefits.map(b => `
+        <li class="flex items-start gap-2 bg-cream-100 p-2.5 rounded-lg border border-cream-200">
+          <span class="text-gold-700 font-bold">✓</span>
+          <span>${b}</span>
+        </li>
+      `).join('');
+
+      document.getElementById('detail-book-btn').onclick = function() {
+        selectPackageForCheckout(rm.id);
+      };
+
+      navigateTo('room-detail');
+    }
+
+    function switchRoomDetailPhoto(imgPath, label) {
+      const mainImg = document.getElementById('detail-main-img');
+      if (!mainImg) return;
+      mainImg.dataset.fallbackDone = '0';
+      mainImg.src = imgPath;
+      mainImg.onerror = function() {
+        handleArchImageFallback(this, imgPath, label);
+      };
+    }
+
+    function selectPackageForCheckout(pkgId) {
+      window.siteData.selectedPackageId = pkgId;
+      navigateTo('booking');
+      renderCheckoutPackageCards();
+      updateBookingCalculation();
+    }
+
+    // --- MASTER VIEW RENDERER ---
+    function renderAllViews() {
+      const s = window.siteData.settings;
+      const waClean = String(s.whatsapp || '94712359694').replace(/[^0-9]/g, '');
+      const waLink = `https://wa.me/${waClean}?text=${encodeURIComponent('Hello Rainforest Retreat — Kukuleganga, Ayagama! I would like to inquire about a stay.')}`;
+
+      // Update Address & Contact Links Everywhere
+      ['topbar-address', 'hero-address-badge', 'footer-address-sub'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = s.address || 'Kukuleganga, Ayagama';
+      });
+      const fLine = document.getElementById('footer-address-line');
+      if (fLine) fLine.textContent = (s.address || 'Kukuleganga, Ayagama') + ', Sri Lanka';
+
+      ['hero-whatsapp-btn', 'story-whatsapp-btn', 'floating-wa-btn', 'footer-wa-btn', 'footer-wa-link', 'topbar-wa'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.href = waLink;
+      });
+      ['topbar-email', 'footer-email-link'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.href = 'mailto:' + (s.email || 'rr.kukule@gmail.com');
+          el.textContent = s.email || 'rr.kukule@gmail.com';
+        }
+      });
+      ['topbar-fb', 'footer-fb-link'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && s.facebook) el.href = s.facebook;
+      });
+      ['topbar-ig', 'footer-ig-link'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && s.instagram) el.href = s.instagram;
+      });
+
+      // Update Home Photos
+      const hp = window.siteData.homePhotos || {};
+      const heroEl = document.getElementById('home-hero-img');
+      if (heroEl && hp.hero) { heroEl.dataset.fallbackDone = '0'; heroEl.src = hp.hero; }
+      const st1 = document.getElementById('home-story-img-1');
+      if (st1 && hp.story1) { st1.dataset.fallbackDone = '0'; st1.src = hp.story1; }
+      const st2 = document.getElementById('home-story-img-2');
+      if (st2 && hp.story2) { st2.dataset.fallbackDone = '0'; st2.src = hp.story2; }
+      const st3 = document.getElementById('home-story-img-3');
+      if (st3 && hp.story3) { st3.dataset.fallbackDone = '0'; st3.src = hp.story3; }
+      ['home-mission-img', 'community-mission-img'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && hp.mission) { el.dataset.fallbackDone = '0'; el.src = hp.mission; }
+      });
+
+      // 1. Render Clickable Rooms (1. Triple, 2. Double, 3. Family)
+      const clickableRooms = window.siteData.roomsAndPackages.filter(r => r.clickableDetail);
+      const nonClickablePkgs = window.siteData.roomsAndPackages.filter(r => !r.clickableDetail);
+
+      const roomCardHTML = (rm) => `
+        <article onclick="openRoomDetailPage('${safeJsAttr(rm.id)}')" class="cursor-pointer nature-card bg-white rounded-xl border border-cream-300 overflow-hidden flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="relative h-60 bg-forest-900 overflow-hidden">
+              <img
+                src="${rm.images[0]}"
+                alt="${safeJsAttr(rm.name)}"
+                class="w-full h-full object-cover card-zoom-img"
+                onerror="handleArchImageFallback(this, '${safeJsAttr(rm.images[0])}', '${safeJsAttr(rm.order + '. ' + rm.name)}')"
+              />
+              <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded font-semibold">
+                ${rm.order}. Click for 4 Photos &amp; Details
+              </span>
+              <span class="absolute bottom-3 right-3 bg-white/95 text-forest-950 font-serif text-xl font-bold px-3.5 py-1 rounded shadow">
+                ${formatPrice(rm.price)}
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-serif text-2xl text-forest-900 font-semibold">${rm.order}. ${rm.name}</h3>
+              <p class="text-xs font-semibold text-gold-700 mt-1">${rm.specs}</p>
+              <p class="text-xs text-wood-700 mt-2.5 leading-relaxed">${rm.summary}</p>
+            </div>
+          </div>
+          <div class="px-6 pb-5 pt-3 border-t border-cream-200 flex items-center justify-between text-xs">
+            <span class="font-bold text-forest-800 hover:text-gold-700">View 4 Photos &amp; Benefits →</span>
+            <button type="button" onclick="event.stopPropagation(); selectPackageForCheckout('${safeJsAttr(rm.id)}')" class="bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold px-3.5 py-1.5 rounded text-[11px] uppercase tracking-wider">
+              Book Now
+            </button>
+          </div>
+        </article>
+      `;
+
+      // 2. Render Non-Clickable Packages (4. Full Board, 5. Entire Place)
+      const pkgCardHTML = (pkg) => `
+        <article class="nature-card bg-forest-900 text-white rounded-xl border-2 border-gold-500/40 overflow-hidden flex flex-col justify-between shadow-md">
+          <div class="grid grid-cols-1 sm:grid-cols-12 h-full">
+            <div class="sm:col-span-5 h-56 sm:h-auto bg-forest-950 overflow-hidden relative">
+              <img
+                src="${pkg.images[0]}"
+                alt="${safeJsAttr(pkg.name)}"
+                class="w-full h-full object-cover"
+                onerror="handleArchImageFallback(this, '${safeJsAttr(pkg.images[0])}', '${safeJsAttr(pkg.order + '. ' + pkg.name)}')"
+              />
+              <span class="absolute top-3 left-3 bg-gold-500 text-forest-950 text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">
+                ${pkg.order}. Package (Meals Included)
+              </span>
+            </div>
+            <div class="sm:col-span-7 p-6 flex flex-col justify-between">
+              <div>
+                <h3 class="font-serif text-2xl sm:text-3xl text-white font-semibold">${pkg.order}. ${pkg.name}</h3>
+                <div class="mt-2 flex flex-wrap items-baseline gap-2">
+                  <span class="font-serif text-3xl font-bold text-gold-400">${formatPrice(pkg.price)}</span>
+                  <span class="text-xs text-cream-200">(${pkg.unitLabel})</span>
+                </div>
+                <p class="mt-2.5 text-xs font-semibold text-gold-300 bg-forest-950/90 px-3 py-2 rounded border border-forest-700">
+                  ${pkg.specs}
+                </p>
+                <p class="text-xs text-cream-100/90 mt-3 leading-relaxed">${pkg.summary}</p>
+                <ul class="mt-3 space-y-1 text-xs text-gold-300">
+                  ${pkg.benefits.map(b => `<li>• ${b}</li>`).join('')}
+                </ul>
+              </div>
+              <div class="mt-5 pt-3 border-t border-forest-800 flex justify-end">
+                <button type="button" onclick="selectPackageForCheckout('${safeJsAttr(pkg.id)}')" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-widest px-5 py-3 rounded-md transition">
+                  Select Package in Checkout →
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+
+      ['home-rooms-grid', 'rooms-page-clickable-grid'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = clickableRooms.map(roomCardHTML).join('');
+      });
+
+      ['home-packages-grid', 'rooms-page-packages-grid'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = nonClickablePkgs.map(pkgCardHTML).join('');
+      });
+
+      // Meal Plan Rates
+      const bfStr = formatPrice(window.siteData.mealRates.breakfast);
+      const lnStr = formatPrice(window.siteData.mealRates.lunch);
+      const dnStr = formatPrice(window.siteData.mealRates.dinner);
+
+      const rmBf = document.getElementById('rooms-meal-bf');
+      if (rmBf) rmBf.innerHTML = `${bfStr} <span class="text-xs font-sans text-cream-200">/ person</span>`;
+      const rmLn = document.getElementById('rooms-meal-ln');
+      if (rmLn) rmLn.innerHTML = `${lnStr} <span class="text-xs font-sans text-cream-200">/ person</span>`;
+      const rmDn = document.getElementById('rooms-meal-dn');
+      if (rmDn) rmDn.innerHTML = `${dnStr} <span class="text-xs font-sans text-cream-200">/ person</span>`;
+
+      const bkBf = document.getElementById('bk-rate-lbl-bf');
+      if (bkBf) bkBf.textContent = bfStr + ' / person';
+      const bkLn = document.getElementById('bk-rate-lbl-ln');
+      if (bkLn) bkLn.textContent = lnStr + ' / person';
+      const bkDn = document.getElementById('bk-rate-lbl-dn');
+      if (bkDn) bkDn.textContent = dnStr + ' / person';
+
+      // 3. Render 9 Inside the Rainforest Retreat Activities (Home + Experiences Page)
+      const renderInsideCard = (act, darkTheme) => {
+        const isSelected = window.siteData.selectedActivities.includes(act.title);
+        const cardBg = darkTheme
+          ? `bg-forest-950 border ${isSelected ? 'border-gold-400' : 'border-forest-800'} text-white`
+          : `bg-white border ${isSelected ? 'border-forest-900' : 'border-cream-300'} text-forest-900 shadow-sm`;
+        const descColor = darkTheme ? 'text-cream-200/80' : 'text-wood-700';
+
+        return `
+          <article class="nature-card ${cardBg} rounded-xl overflow-hidden flex flex-col justify-between">
+            <div>
+              <div class="relative h-52 bg-forest-900 overflow-hidden">
+                <img
+                  src="${act.image}"
+                  alt="${safeJsAttr(act.title)}"
+                  onclick="openLightbox(this.src, '${safeJsAttr(act.title)}')"
+                  class="cursor-pointer w-full h-full object-cover card-zoom-img"
+                  onerror="handleArchImageFallback(this, '${safeJsAttr(act.image)}', '${safeJsAttr(act.title)}')"
+                />
+                <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded font-semibold">
+                  Inside the Retreat
+                </span>
+              </div>
+              <div class="p-5">
+                <h3 class="font-serif text-2xl font-semibold">${act.title}</h3>
+                <p class="text-xs ${descColor} mt-2 leading-relaxed">${act.desc}</p>
+              </div>
+            </div>
+            <div class="px-5 pb-5 pt-3 border-t ${darkTheme ? 'border-forest-800' : 'border-cream-200'} space-y-2">
+              ${act.hasBirdBook ? `
+                <button type="button" onclick="openBirdPdfPage()" class="w-full bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-xs uppercase tracking-wider py-2.5 px-3 rounded transition">
+                  📖 Open 1-Hour Bird Logbook (PDF) ↗
+                </button>
+              ` : ''}
+              <button type="button" onclick="toggleInHouseActivityFromHome('${safeJsAttr(act.title)}')" class="w-full ${isSelected ? 'bg-forest-800 text-gold-300 border border-gold-400/50' : (darkTheme ? 'bg-forest-900 hover:bg-forest-800 text-cream-100 border border-forest-700' : 'bg-cream-100 hover:bg-forest-900 hover:text-white text-forest-900 border border-cream-300')} text-xs uppercase tracking-wider font-semibold py-2.5 px-3 rounded transition">
+                ${isSelected ? '✓ Added to Booking (Remove)' : '+ Add to Booking'}
+              </button>
+            </div>
+          </article>
+        `;
+      };
+
+      const homeActGrid = document.getElementById('home-inside-activities-grid');
+      if (homeActGrid) {
+        homeActGrid.innerHTML = window.siteData.insideActivities.map(a => renderInsideCard(a, true)).join('');
+      }
+      const pageInsideGrid = document.getElementById('attractions-inside-grid');
+      if (pageInsideGrid) {
+        pageInsideGrid.innerHTML = window.siteData.insideActivities.map(a => renderInsideCard(a, false)).join('');
+      }
+
+      // 4. Render In the Village (6 Items) & Attractions Nearby (5 Items)
+      const simpleAttractionCard = (item, badgeText) => `
+        <article class="nature-card bg-white rounded-xl border border-cream-300 overflow-hidden flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="relative h-56 bg-forest-900 overflow-hidden">
+              <img
+                src="${item.image}"
+                alt="${safeJsAttr(item.title)}"
+                onclick="openLightbox(this.src, '${safeJsAttr(item.title)}')"
+                class="cursor-pointer w-full h-full object-cover card-zoom-img"
+                onerror="handleArchImageFallback(this, '${safeJsAttr(item.image)}', '${safeJsAttr(item.title)}')"
+              />
+              <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded font-semibold">
+                ${badgeText}
+              </span>
+            </div>
+            <div class="p-5">
+              <h3 class="font-serif text-2xl text-forest-900 font-semibold">${item.title}</h3>
+              <p class="text-xs text-wood-700 mt-2 leading-relaxed">${item.desc}</p>
+            </div>
+          </div>
+        </article>
+      `;
+
+      const vilGrid = document.getElementById('attractions-village-grid');
+      if (vilGrid) {
+        vilGrid.innerHTML = window.siteData.villageActivities.map(v => simpleAttractionCard(v, 'In the Village')).join('');
+      }
+
+      const nearGrid = document.getElementById('attractions-nearby-grid');
+      if (nearGrid) {
+        nearGrid.innerHTML = window.siteData.nearbyAttractions.map(n => simpleAttractionCard(n, 'Attraction Nearby')).join('');
+      }
+
+      // 5. Render Community 4 Pillars
+      const commGrid = document.getElementById('community-pillars-grid');
+      if (commGrid) {
+        commGrid.innerHTML = window.siteData.communityPillars.map((c, idx) => `
+          <article class="nature-card bg-white rounded-xl border border-cream-300 overflow-hidden shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="h-60 bg-forest-900 overflow-hidden relative">
+                <img
+                  src="${c.image}"
+                  alt="${safeJsAttr(c.title)}"
+                  onclick="openLightbox(this.src, '${safeJsAttr(c.title)}')"
+                  class="cursor-pointer w-full h-full object-cover card-zoom-img"
+                  onerror="handleArchImageFallback(this, '${safeJsAttr(c.image)}', '${safeJsAttr(c.title)}')"
+                />
+                <span class="absolute top-3 left-3 bg-forest-950/90 text-gold-300 text-[10px] uppercase tracking-widest px-3 py-1 rounded font-semibold">
+                  Community Initiative 0${idx + 1}
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-serif text-2xl sm:text-3xl text-forest-900 font-semibold">● ${c.title}</h3>
+                <p class="text-xs sm:text-sm text-wood-700 mt-2.5 leading-relaxed">${c.desc}</p>
+              </div>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      // 6. Render Gallery & Category Filters
+      renderGallerySection();
+
+      // 7. Render 4 Guest Reviews on Home Page
+      const revGrid = document.getElementById('home-reviews-grid');
+      if (revGrid) {
+        revGrid.innerHTML = window.siteData.reviews.map(rv => `
+          <article class="bg-forest-900/90 border border-forest-800 rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-md">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-gold-400 text-sm tracking-widest">★★★★★</span>
+                <span class="text-[11px] uppercase tracking-widest text-cream-200/60">Guest Review</span>
+              </div>
+              <h3 class="font-serif text-xl sm:text-2xl text-gold-300 font-semibold">"${rv.headline}"</h3>
+              <p class="text-xs sm:text-sm text-cream-100/90 leading-relaxed italic">"${rv.text}"</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-forest-800 flex items-center justify-between">
+              <span class="font-serif text-lg text-white font-semibold">— ${rv.author}</span>
+              <span class="text-[11px] text-gold-400">Kukuleganga, Ayagama</span>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      renderCheckoutPackageCards();
+      renderCheckoutActivitiesSelector();
+    }
+
+    // --- GALLERY RENDERER ---
+    function renderGallerySection() {
+      const categories = ['All', 'Sanctuary & Chalets', 'Streams & Nature', 'Activities & Dining', 'Birdwatching', 'Community'];
+      const filterBar = document.getElementById('gallery-filter-bar');
+      if (filterBar) {
+        filterBar.innerHTML = categories.map(cat => {
+          const active = window.siteData.activeGalleryCategory === cat;
+          return `
+            <button type="button" onclick="setGalleryCategory('${safeJsAttr(cat)}')" class="text-xs uppercase tracking-wider px-3.5 py-2 rounded-md font-semibold transition ${active ? 'bg-forest-900 text-gold-300' : 'bg-white text-forest-900 border border-cream-300 hover:border-gold-500'}">
+              ${cat}
+            </button>
+          `;
+        }).join('');
+      }
+
+      const grid = document.getElementById('gallery-items-grid');
+      if (grid) {
+        const items = window.siteData.activeGalleryCategory === 'All'
+          ? window.siteData.gallery
+          : window.siteData.gallery.filter(g => g.category === window.siteData.activeGalleryCategory);
+
+        grid.innerHTML = items.map(g => `
+          <div onclick="openLightbox('${safeJsAttr(g.image)}', '${safeJsAttr(g.title)}')" class="cursor-pointer nature-card bg-white p-2.5 rounded-xl border border-cream-300 shadow-sm">
+            <div class="h-64 rounded-lg overflow-hidden bg-forest-900 relative">
+              <img
+                src="${g.image}"
+                alt="${safeJsAttr(g.title)}"
+                class="w-full h-full object-cover card-zoom-img"
+                onerror="handleArchImageFallback(this, '${safeJsAttr(g.image)}', '${safeJsAttr(g.title)}')"
+              />
+              <span class="absolute top-3 left-3 bg-forest-950/85 text-gold-300 text-[10px] uppercase tracking-widest px-2.5 py-1 rounded">
+                ${g.category}
+              </span>
+            </div>
+            <div class="pt-3 px-1 flex items-center justify-between">
+              <h3 class="font-serif text-lg text-forest-900 font-semibold">${g.title}</h3>
+              <span class="text-[11px] text-gold-700 font-semibold">View ↗</span>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function setGalleryCategory(cat) {
+      window.siteData.activeGalleryCategory = cat;
+      renderGallerySection();
+    }
+
+    // --- CHECKOUT STEP 2 & STEP 4 RENDERERS ---
+    function renderCheckoutPackageCards() {
+      const container = document.getElementById('bk-package-cards-list');
+      if (!container) return;
+
+      container.innerHTML = window.siteData.roomsAndPackages.map(item => {
+        const active = window.siteData.selectedPackageId === item.id;
+        return `
+          <div onclick="selectCheckoutRadioPackage('${safeJsAttr(item.id)}')" class="cursor-pointer p-4 rounded-xl border-2 transition flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${active ? 'border-forest-900 bg-forest-50/70 shadow-sm' : 'border-cream-300 bg-white hover:border-gold-500'}">
+            <div class="flex items-start gap-3">
+              <input type="radio" name="bk_pkg_radio" ${active ? 'checked' : ''} class="mt-1 accent-forest-900" />
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="font-serif text-xl text-forest-900 font-bold">${item.order}. ${item.name}</span>
+                  <span class="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded font-bold ${item.isRoomOnly ? 'bg-cream-200 text-forest-900' : 'bg-forest-900 text-gold-300'}">
+                    ${item.isRoomOnly ? 'Room Only' : 'Meals Included'}
+                  </span>
+                </div>
+                <p class="text-xs text-wood-700 mt-0.5">${item.specs}</p>
+              </div>
+            </div>
+            <div class="text-left sm:text-right shrink-0 pl-6 sm:pl-0">
+              <span class="font-serif text-2xl font-bold text-gold-700 block">${formatPrice(item.price)}</span>
+              <span class="text-[10px] text-wood-500">${item.unitLabel}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectCheckoutRadioPackage(pkgId) {
+      window.siteData.selectedPackageId = pkgId;
+      if (pkgId === 'full-board-pkg') {
+        const gEl = document.getElementById('bk-guests');
+        if (gEl && Number(gEl.value) < 2) gEl.value = 2;
+      }
+      renderCheckoutPackageCards();
+      updateBookingCalculation();
+    }
+
+    function renderCheckoutActivitiesSelector() {
+      const container = document.getElementById('bk-inside-activities-selector');
+      if (!container) return;
+
+      container.innerHTML = window.siteData.insideActivities.map(act => {
+        const checked = window.siteData.selectedActivities.includes(act.title);
+        return `
+          <div onclick="toggleCheckoutActivity('${safeJsAttr(act.title)}')" class="cursor-pointer p-3 rounded-xl border-2 transition flex items-start gap-3 ${checked ? 'border-forest-900 bg-forest-50' : 'border-cream-300 bg-white hover:border-gold-500'}">
+            <img
+              src="${act.image}"
+              alt="${safeJsAttr(act.title)}"
+              class="w-16 h-16 rounded-lg object-cover shrink-0 bg-forest-900"
+              onerror="handleArchImageFallback(this, '${safeJsAttr(act.image)}', '${safeJsAttr(act.title)}')"
+            />
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-1">
+                <span class="font-serif text-lg font-bold text-forest-900 truncate">${act.title}</span>
+                <input type="checkbox" ${checked ? 'checked' : ''} class="accent-forest-900 w-4 h-4 shrink-0" onclick="event.stopPropagation(); toggleCheckoutActivity('${safeJsAttr(act.title)}');" />
+              </div>
+              <p class="text-[11px] text-wood-700 line-clamp-2 mt-0.5">${act.desc}</p>
+              ${act.hasBirdBook ? `
+                <button type="button" onclick="event.stopPropagation(); openBirdPdfPage();" class="mt-1.5 text-[10px] uppercase tracking-wider font-bold text-gold-700 underline">
+                  📖 Open 1-Hr Bird Logbook PDF ↗
+                </button>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const badge = document.getElementById('bk-selected-activities-count');
+      if (badge) badge.textContent = window.siteData.selectedActivities.length + ' Selected';
+    }
+
+    function toggleCheckoutActivity(title) {
+      const idx = window.siteData.selectedActivities.indexOf(title);
+      if (idx > -1) {
+        window.siteData.selectedActivities.splice(idx, 1);
+      } else {
+        window.siteData.selectedActivities.push(title);
+      }
+      renderAllViews();
+      updateBookingCalculation();
+    }
+
+    function toggleInHouseActivityFromHome(title) {
+      toggleCheckoutActivity(title);
+      const isNowSelected = window.siteData.selectedActivities.includes(title);
+      showToast(isNowSelected ? `Added "${title}" to your Booking` : `Removed "${title}" from Booking`);
+    }
+
+    function adjustMealCount(mealKey, delta) {
+      const input = document.getElementById('bk-meal-' + mealKey);
+      if (!input) return;
+      const next = Math.max(0, Math.min(30, (Number(input.value) || 0) + delta));
+      input.value = next;
+      updateBookingCalculation();
+    }
+
+    // --- LIVE CHECKOUT CALCULATOR & EASY-TO-READ MESSAGE GENERATOR ---
+    function updateBookingCalculation() {
+      const pkg = window.siteData.roomsAndPackages.find(r => r.id === window.siteData.selectedPackageId) || window.siteData.roomsAndPackages[0];
+
+      const name = (document.getElementById('bk-name')?.value || '').trim();
+      const phone = (document.getElementById('bk-phone')?.value || '').trim();
+      const email = (document.getElementById('bk-email')?.value || '').trim();
+      const country = (document.getElementById('bk-country')?.value || '').trim();
+      const ci = document.getElementById('bk-checkin')?.value || '';
+      const co = document.getElementById('bk-checkout')?.value || '';
+      let guests = Math.max(1, Number(document.getElementById('bk-guests')?.value) || 2);
+      const units = Math.max(1, Number(document.getElementById('bk-units')?.value) || 1);
+      const notes = (document.getElementById('bk-notes')?.value || '').trim();
+
+      let nights = 1;
+      if (ci && co) {
+        const d1 = new Date(ci);
+        const d2 = new Date(co);
+        const diff = Math.round((d2 - d1) / (1000 * 60 * 60 * 24));
+        if (diff > 0) nights = diff;
+      }
+
+      // Show/Hide Meal Plan Selector ONLY for Room-Only options (1, 2, 3)
+      const mealWrapper = document.getElementById('bk-meal-plan-wrapper');
+      const mealsIncludedBox = document.getElementById('bk-meals-included-notice');
+      const mealsIncludedDesc = document.getElementById('bk-meals-included-desc');
+      const ruleBanner = document.getElementById('bk-package-rule-banner');
+
+      if (pkg.isRoomOnly) {
+        if (mealWrapper) mealWrapper.classList.remove('hidden');
+        if (mealsIncludedBox) mealsIncludedBox.classList.add('hidden');
+        if (ruleBanner) ruleBanner.classList.add('hidden');
+      } else {
+        if (mealWrapper) mealWrapper.classList.add('hidden');
+        if (mealsIncludedBox) mealsIncludedBox.classList.remove('hidden');
+        if (ruleBanner) ruleBanner.classList.remove('hidden');
+
+        if (pkg.id === 'full-board-pkg') {
+          if (mealsIncludedDesc) {
+            mealsIncludedDesc.textContent = 'Full Board Package includes meals. Rate is Rs. 15,000 for one person (Display Price: Rs. 30,000). Minimum 2 persons for 2 days.';
+          }
+          if (ruleBanner) {
+            ruleBanner.innerHTML = '<strong>Full Board Package Rule:</strong> Rs. 15,000 for 1 person (Meals Included). Minimum booking is <strong>2 persons for 2 days</strong> (Display Price: Rs. 30,000).';
+          }
+        } else {
+          if (mealsIncludedDesc) {
+            mealsIncludedDesc.textContent = 'Entire Place with Private Cook (Rs. 70,000 / day) includes 3 daily meals prepared by our cook (*All provisions to be provided by guest).';
+          }
+          if (ruleBanner) {
+            ruleBanner.innerHTML = '<strong>Entire Place with Private Cook:</strong> Includes 3 meals by our cook. <em>* All provisions to be provided by guest.</em>';
+          }
+        }
+      }
+
+      let baseStayLKR = 0;
+      let stayLineLabel = '';
+      let effectiveNights = nights;
+
+      if (pkg.id === 'full-board-pkg') {
+        const billableGuests = Math.max(2, guests);
+        effectiveNights = Math.max(2, nights);
+        baseStayLKR = (pkg.perPersonRate || 15000) * billableGuests * effectiveNights;
+        stayLineLabel = `${pkg.name} (${billableGuests} Guests × ${effectiveNights} Days @ Rs. 15,000/pp)`;
+      } else if (pkg.id === 'entire-place-pkg') {
+        baseStayLKR = pkg.price * nights;
+        stayLineLabel = `${pkg.name} (${nights} Day${nights > 1 ? 's' : ''})`;
+      } else {
+        baseStayLKR = pkg.price * units * nights;
+        stayLineLabel = `${pkg.name} (${units} Room${units > 1 ? 's' : ''} × ${nights} Night${nights > 1 ? 's' : ''})`;
+      }
+
+      const badge = document.getElementById('bk-nights-badge');
+      if (badge) badge.textContent = effectiveNights + (effectiveNights === 1 ? ' Night' : ' Nights');
+
+      const bfCount = pkg.isRoomOnly ? (Number(document.getElementById('bk-meal-bf')?.value) || 0) : 0;
+      const lnCount = pkg.isRoomOnly ? (Number(document.getElementById('bk-meal-ln')?.value) || 0) : 0;
+      const dnCount = pkg.isRoomOnly ? (Number(document.getElementById('bk-meal-dn')?.value) || 0) : 0;
+
+      const bfTotalLKR = bfCount * window.siteData.mealRates.breakfast * effectiveNights;
+      const lnTotalLKR = lnCount * window.siteData.mealRates.lunch * effectiveNights;
+      const dnTotalLKR = dnCount * window.siteData.mealRates.dinner * effectiveNights;
+      const mealsTotalLKR = bfTotalLKR + lnTotalLKR + dnTotalLKR;
+
+      const subTotalLKR = baseStayLKR + mealsTotalLKR;
+      const serviceChargeLKR = Math.round(subTotalLKR * 0.10);
+      const grandTotalLKR = subTotalLKR + serviceChargeLKR;
+
+      const breakdownEl = document.getElementById('bk-summary-breakdown');
+      if (breakdownEl) {
+        let rows = `
+          <div class="flex justify-between py-1.5 border-b border-forest-800">
+            <span class="text-cream-200">${stayLineLabel}</span>
+            <span class="font-semibold text-white">${formatPrice(baseStayLKR)}</span>
+          </div>
+        `;
+
+        if (pkg.isRoomOnly) {
+          if (bfCount > 0) {
+            rows += `
+              <div class="flex justify-between py-1 border-b border-forest-800/60 text-xs">
+                <span class="text-cream-200">Breakfast (${bfCount} person${bfCount > 1 ? 's' : ''} × ${effectiveNights}d)</span>
+                <span class="text-gold-300">${formatPrice(bfTotalLKR)}</span>
+              </div>
+            `;
+          }
+          if (lnCount > 0) {
+            rows += `
+              <div class="flex justify-between py-1 border-b border-forest-800/60 text-xs">
+                <span class="text-cream-200">Lunch (${lnCount} person${lnCount > 1 ? 's' : ''} × ${effectiveNights}d)</span>
+                <span class="text-gold-300">${formatPrice(lnTotalLKR)}</span>
+              </div>
+            `;
+          }
+          if (dnCount > 0) {
+            rows += `
+              <div class="flex justify-between py-1 border-b border-forest-800/60 text-xs">
+                <span class="text-cream-200">Dinner + Tea (${dnCount} person${dnCount > 1 ? 's' : ''} × ${effectiveNights}d)</span>
+                <span class="text-gold-300">${formatPrice(dnTotalLKR)}</span>
+              </div>
+            `;
+          }
+          if (mealsTotalLKR === 0) {
+            rows += `
+              <div class="flex justify-between py-1 border-b border-forest-800/60 text-xs text-cream-200/70">
+                <span>Meal Plan</span>
+                <span>Room Only (No meals selected)</span>
+              </div>
+            `;
+          }
+        } else {
+          rows += `
+            <div class="flex justify-between py-1 border-b border-forest-800/60 text-xs text-gold-300">
+              <span>Meal Plan</span>
+              <span>Included in Package</span>
+            </div>
+          `;
+        }
+
+        rows += `
+          <div class="flex justify-between py-1.5 border-b border-forest-800 text-xs text-cream-200">
+            <span>10% Service Charge</span>
+            <span>${formatPrice(serviceChargeLKR)}</span>
+          </div>
+          <div class="pt-2">
+            <span class="text-[11px] uppercase tracking-wider text-gold-400 font-semibold block">Selected In-House Activities (${window.siteData.selectedActivities.length}):</span>
+            <p class="text-xs text-cream-100 mt-0.5">${window.siteData.selectedActivities.length ? window.siteData.selectedActivities.join(', ') : 'None selected'}</p>
+          </div>
+        `;
+        breakdownEl.innerHTML = rows;
+      }
+
+      const totDisp = document.getElementById('bk-total-display');
+      if (totDisp) totDisp.textContent = formatPrice(grandTotalLKR);
+
+      const mealSummaryLines = [];
+      if (pkg.isRoomOnly) {
+        if (bfCount > 0) mealSummaryLines.push(`  • Breakfast: ${bfCount} Person(s)/day`);
+        if (lnCount > 0) mealSummaryLines.push(`  • Lunch: ${lnCount} Person(s)/day`);
+        if (dnCount > 0) mealSummaryLines.push(`  • Dinner (+Tea): ${dnCount} Person(s)/day`);
+        if (mealSummaryLines.length === 0) mealSummaryLines.push(`  • Room Only (No meals added)`);
+      } else if (pkg.id === 'full-board-pkg') {
+        mealSummaryLines.push(`  • Full Board Meals Included (Min. 2 persons for 2 days)`);
+      } else {
+        mealSummaryLines.push(`  • 3 Meals by Private Cook (*All provisions provided by guest)`);
+      }
+
+      const actLines = window.siteData.selectedActivities.length
+        ? window.siteData.selectedActivities.map(a => `  ✓ ${a}`).join('\n')
+        : '  • None selected';
+
+      const msg = [
+        `🌿 *RAINFOREST RETREAT — KUKULEGANGA, AYAGAMA*`,
+        `*RESERVATION & AVAILABILITY INQUIRY*`,
+        `-----------------------------------------`,
+        `👤 *Name:* ${name || 'Not entered'}`,
+        `📞 *WhatsApp/Phone:* ${phone || 'Not entered'}`,
+        email ? `✉️ *Email:* ${email}` : null,
+        country ? `🌍 *City/Country:* ${country}` : null,
+        ``,
+        `📅 *STAY DETAILS*`,
+        `• *Check-In:* ${ci || 'TBD'}`,
+        `• *Check-Out:* ${co || 'TBD'} (${effectiveNights} Night/s)`,
+        `• *Total Guests:* ${guests}`,
+        `• *Selected Option:* ${pkg.order}. ${pkg.name}`,
+        pkg.isRoomOnly ? `• *Rooms:* ${units}` : null,
+        ``,
+        `🍽️ *MEAL PLAN*`,
+        ...mealSummaryLines,
+        ``,
+        `🧘 *SELECTED IN-HOUSE RETREAT ACTIVITIES*`,
+        actLines,
+        ``,
+        `💰 *ESTIMATED SUMMARY (${window.siteData.currency})*`,
+        `• Stay Base: ${formatPrice(baseStayLKR)}`,
+        pkg.isRoomOnly && mealsTotalLKR > 0 ? `• Meal Plan Total: ${formatPrice(mealsTotalLKR)}` : null,
+        `• 10% Service Charge: ${formatPrice(serviceChargeLKR)}`,
+        `*Estimated Total:* ${formatPrice(grandTotalLKR)} (+ applicable Govt. taxes)`,
+        notes ? `\n📝 *Special Notes:* ${notes}` : null,
+        `-----------------------------------------`,
+        `📍 ${window.siteData.settings.address || 'Kukuleganga, Ayagama'}`
+      ].filter(Boolean).join('\n');
+
+      const pre = document.getElementById('bk-message-preview');
+      if (pre) pre.textContent = msg;
+      return msg;
+    }
+
+    function sendBookingWhatsApp() {
+      const name = (document.getElementById('bk-name')?.value || '').trim();
+      const ci = document.getElementById('bk-checkin')?.value || '';
+      if (!name) {
+        showToast('Please enter your name in Step 1.');
+        document.getElementById('bk-name')?.focus();
+        return;
+      }
+      if (!ci) {
+        showToast('Please select a Check-In date in Step 1.');
+        document.getElementById('bk-checkin')?.focus();
+        return;
+      }
+      const msg = updateBookingCalculation();
+      const waClean = String(window.siteData.settings.whatsapp || '94712359694').replace(/[^0-9]/g, '');
+      window.open(`https://wa.me/${waClean}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    }
+
+    function sendBookingEmail() {
+      const name = (document.getElementById('bk-name')?.value || '').trim();
+      if (!name) {
+        showToast('Please enter your name in Step 1.');
+        document.getElementById('bk-name')?.focus();
+        return;
+      }
+      const msg = updateBookingCalculation();
+      const mailTo = window.siteData.settings.email || 'rr.kukule@gmail.com';
+      const subject = `Reservation Inquiry - Rainforest Retreat Kukuleganga, Ayagama (${name})`;
+      window.location.href = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
+    }
+
+    function copyBookingMessage() {
+      const msg = updateBookingCalculation();
+      const ta = document.createElement('textarea');
+      ta.value = msg;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('Booking summary copied!');
+    }
+
+    // --- ADMIN PANEL LOGIC ---
+    function handleAdminLogin() {
+      const u = (document.getElementById('admin-user-input')?.value || '').trim();
+      const p = (document.getElementById('admin-pass-input')?.value || '').trim();
+      const err = document.getElementById('admin-login-error');
+
+      if (u === window.siteData.settings.adminUser && p === window.siteData.settings.adminPass) {
+        if (err) err.classList.add('hidden');
+        document.getElementById('admin-login-box')?.classList.add('hidden');
+        document.getElementById('admin-dashboard-box')?.classList.remove('hidden');
+        renderAdminForms();
+        showToast('Welcome to Rainforest Retreat Admin CMS');
+      } else {
+        if (err) {
+          err.textContent = 'Invalid username or password.';
+          err.classList.remove('hidden');
+        }
+      }
+    }
+
+    function handleAdminLogout() {
+      document.getElementById('admin-dashboard-box')?.classList.add('hidden');
+      document.getElementById('admin-login-box')?.classList.remove('hidden');
+      document.getElementById('admin-pass-input').value = '';
+    }
+
+    function switchAdminTab(tabKey) {
+      document.querySelectorAll('.admin-tab-pane').forEach(p => p.classList.add('hidden'));
+      document.getElementById('admin-tab-' + tabKey)?.classList.remove('hidden');
+
+      document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+        if (btn.dataset.admintab === tabKey) {
+          btn.className = 'admin-tab-btn bg-forest-900 text-gold-300 text-xs uppercase tracking-wider font-bold px-4 py-2.5 rounded-md';
+        } else {
+          btn.className = 'admin-tab-btn bg-white text-forest-900 border border-cream-300 text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-md';
+        }
+      });
+    }
+
+    function renderAdminForms() {
+      // Tab 1: Exchange Rates & Meal Rates
+      document.getElementById('adm-rate-usd').value = window.siteData.exchangeRates.USD;
+      document.getElementById('adm-rate-eur').value = window.siteData.exchangeRates.EUR;
+      document.getElementById('adm-meal-bf').value = window.siteData.mealRates.breakfast;
+      document.getElementById('adm-meal-ln').value = window.siteData.mealRates.lunch;
+      document.getElementById('adm-meal-dn').value = window.siteData.mealRates.dinner;
+
+      // Tab 1: Rooms & Packages List
+      const rmList = document.getElementById('admin-rooms-editor-list');
+      if (rmList) {
+        rmList.innerHTML = window.siteData.roomsAndPackages.map((rm, rIdx) => `
+          <div class="bg-white p-6 rounded-xl border border-cream-300 shadow-sm space-y-4 text-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-cream-200 pb-3">
+              <h3 class="font-serif text-2xl text-forest-900 font-semibold">${rm.order}. ${rm.name}</h3>
+              <span class="px-2.5 py-1 rounded bg-cream-100 font-bold text-forest-900">${rm.clickableDetail ? 'Clickable Room (4 Photos)' : 'Package Card'}</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Title</label>
+                <input type="text" value="${safeJsAttr(rm.name)}" onchange="window.siteData.roomsAndPackages[${rIdx}].name = this.value; saveAdminDataToStorage();" class="w-full px-3 py-2 rounded border border-cream-300" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Display Price (LKR)</label>
+                <input type="number" value="${rm.price}" onchange="window.siteData.roomsAndPackages[${rIdx}].price = Number(this.value)||0; saveAdminDataToStorage();" class="w-full px-3 py-2 rounded border border-cream-300 font-bold" />
+              </div>
+              <div>
+                <label class="font-bold text-wood-700 block mb-1">Beds &amp; Bathroom Specs</label>
+                <input type="text" value="${safeJsAttr(rm.specs)}" onchange="window.siteData.roomsAndPackages[${rIdx}].specs = this.value; saveAdminDataToStorage();" class="w-full px-3 py-2 rounded border border-cream-300" />
+              </div>
+            </div>
+            <div>
+              <label class="font-bold text-wood-700 block mb-1">Description</label>
+              <textarea rows="2" onchange="window.siteData.roomsAndPackages[${rIdx}].summary = this.value; saveAdminDataToStorage();" class="w-full px-3 py-2 rounded border border-cream-300">${rm.summary}</textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              ${rm.images.map((imgP, iIdx) => `
+                <div class="p-2.5 rounded border border-cream-200 bg-cream-50 space-y-2">
+                  <span class="font-bold text-[11px] text-forest-900 block">Photo #${iIdx + 1}</span>
+                  <input type="text" value="${safeJsAttr(imgP)}" onchange="window.siteData.roomsAndPackages[${rIdx}].images[${iIdx}] = this.value; saveAdminDataToStorage();" class="w-full px-2 py-1.5 rounded border border-cream-300 text-[11px]" />
+                  <label class="cursor-pointer block text-center bg-forest-900 text-gold-300 py-1.5 rounded text-[10px] uppercase tracking-wider font-semibold">
+                    Upload Photo
+                    <input type="file" accept="image/*" class="hidden" onchange="adminUploadRoomPhoto(event, ${rIdx}, ${iIdx})" />
+                  </label>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Tab 2: Bird PDF & Activities
+      document.getElementById('adm-bird-pdf-url').value = window.siteData.settings.birdPdfUrl || 'files/bird-logbook.pdf';
+
+      const renderActEditor = (arrName, listId) => {
+        const el = document.getElementById(listId);
+        if (!el) return;
+        el.innerHTML = window.siteData[arrName].map((item, idx) => `
+          <div class="p-4 rounded-xl border border-cream-300 bg-cream-50 space-y-2.5 text-xs">
+            <div class="flex items-center justify-between gap-2">
+              <input type="text" value="${safeJsAttr(item.title)}" onchange="window.siteData['${arrName}'][${idx}].title = this.value; saveAdminDataToStorage();" class="font-bold text-forest-900 px-2.5 py-1.5 rounded border border-cream-300 w-full" />
+            </div>
+            <textarea rows="2" onchange="window.siteData['${arrName}'][${idx}].desc = this.value; saveAdminDataToStorage();" class="w-full px-2.5 py-1.5 rounded border border-cream-300">${item.desc}</textarea>
+            <div class="flex items-center gap-2">
+              <input type="text" value="${safeJsAttr(item.image)}" onchange="window.siteData['${arrName}'][${idx}].image = this.value; saveAdminDataToStorage();" class="flex-1 px-2.5 py-1.5 rounded border border-cream-300 text-[11px]" />
+              <label class="cursor-pointer shrink-0 bg-forest-900 text-gold-300 px-3 py-1.5 rounded text-[10px] uppercase tracking-wider font-bold">
+                Upload
+                <input type="file" accept="image/*" class="hidden" onchange="adminUploadArrayPhoto(event, '${arrName}', ${idx})" />
+              </label>
+            </div>
+          </div>
+        `).join('');
+      };
+
+      renderActEditor('insideActivities', 'admin-inside-activities-list');
+      renderActEditor('villageActivities', 'admin-village-activities-list');
+      renderActEditor('nearbyAttractions', 'admin-nearby-activities-list');
+
+      // Tab 3: Home & Community Photos
+      const homePhotosBox = document.getElementById('admin-home-photos-box');
+      if (homePhotosBox) {
+        const keys = [
+          { k: 'hero', label: 'Home Hero Cabin Photo (images/hero-cabin.jpg)' },
+          { k: 'story1', label: 'Home Story Photo 1 (images/verandah-night.jpg)' },
+          { k: 'story2', label: 'Home Story Photo 2 (images/meditation-stream.jpg)' },
+          { k: 'story3', label: 'Home Story Photo 3 (images/morning-tea.jpg)' },
+          { k: 'mission', label: 'Mission Founder Photo (images/community/mission-founder.jpg)' }
+        ];
+        homePhotosBox.innerHTML = keys.map(item => `
+          <div class="p-3.5 rounded-lg border border-cream-300 bg-cream-50 space-y-2">
+            <label class="font-bold text-forest-900 block">${item.label}</label>
+            <div class="flex gap-2">
+              <input type="text" value="${safeJsAttr(window.siteData.homePhotos[item.k] || '')}" onchange="window.siteData.homePhotos['${item.k}'] = this.value; saveAdminDataToStorage();" class="flex-1 px-2.5 py-1.5 rounded border border-cream-300" />
+              <label class="cursor-pointer bg-forest-900 text-gold-300 px-3 py-1.5 rounded text-[10px] uppercase tracking-wider font-bold">
+                Upload
+                <input type="file" accept="image/*" class="hidden" onchange="adminUploadHomePhoto(event, '${item.k}')" />
+              </label>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      renderActEditor('communityPillars', 'admin-community-pillars-list');
+
+      // Tab 4: Gallery Manager
+      const galList = document.getElementById('admin-gallery-manager-list');
+      if (galList) {
+        galList.innerHTML = window.siteData.gallery.map((g, idx) => `
+          <div class="p-3 rounded-lg border border-cream-300 bg-cream-50 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-3 flex-1 min-w-[240px]">
+              <span class="font-bold text-wood-500 w-6">#${idx + 1}</span>
+              <input type="text" value="${safeJsAttr(g.title)}" onchange="window.siteData.gallery[${idx}].title = this.value; saveAdminDataToStorage();" class="px-2.5 py-1.5 rounded border border-cream-300 font-semibold flex-1" />
+              <input type="text" value="${safeJsAttr(g.category)}" onchange="window.siteData.gallery[${idx}].category = this.value; saveAdminDataToStorage();" class="px-2.5 py-1.5 rounded border border-cream-300 w-40" />
+              <input type="text" value="${safeJsAttr(g.image)}" onchange="window.siteData.gallery[${idx}].image = this.value; saveAdminDataToStorage();" class="px-2.5 py-1.5 rounded border border-cream-300 w-48 text-[11px]" />
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button type="button" onclick="adminMoveGallery(${idx}, -1)" class="px-2.5 py-1 rounded bg-white border border-cream-300 hover:bg-forest-900 hover:text-white font-bold">↑</button>
+              <button type="button" onclick="adminMoveGallery(${idx}, 1)" class="px-2.5 py-1 rounded bg-white border border-cream-300 hover:bg-forest-900 hover:text-white font-bold">↓</button>
+              <button type="button" onclick="adminDeleteGallery(${idx})" class="px-2.5 py-1 rounded bg-red-100 text-red-800 hover:bg-red-700 hover:text-white font-bold">Delete</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Tab 5: General Settings
+      const s = window.siteData.settings;
+      document.getElementById('adm-set-address').value = s.address || 'Kukuleganga, Ayagama';
+      document.getElementById('adm-set-wa').value = s.whatsapp || '94712359694';
+      document.getElementById('adm-set-email').value = s.email || 'rr.kukule@gmail.com';
+      document.getElementById('adm-set-fb').value = s.facebook || '';
+      document.getElementById('adm-set-ig').value = s.instagram || '';
+      document.getElementById('adm-set-user').value = s.adminUser || 'rainforestretreat.lk';
+      document.getElementById('adm-set-pass').value = s.adminPass || '123456';
+    }
+
+    function adminUploadBirdPdf(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const blobUrl = URL.createObjectURL(file);
+      window.siteData.settings.birdPdfUrl = blobUrl;
+      document.getElementById('adm-bird-pdf-url').value = blobUrl;
+      saveAdminDataToStorage();
+      showToast('Bird Watching PDF uploaded! Clicking the PDF button now opens it directly.');
+    }
+
+    function readFileAsDataURL(file, cb) {
+      const reader = new FileReader();
+      reader.onload = e => cb(e.target.result);
+      reader.readAsDataURL(file);
+    }
+
+    function adminUploadRoomPhoto(event, rIdx, iIdx) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      readFileAsDataURL(file, dataUrl => {
+        window.siteData.roomsAndPackages[rIdx].images[iIdx] = dataUrl;
+        saveAdminDataToStorage();
+        renderAdminForms();
+      });
+    }
+
+    function adminUploadArrayPhoto(event, arrName, idx) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      readFileAsDataURL(file, dataUrl => {
+        window.siteData[arrName][idx].image = dataUrl;
+        saveAdminDataToStorage();
+        renderAdminForms();
+      });
+    }
+
+    function adminUploadHomePhoto(event, key) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      readFileAsDataURL(file, dataUrl => {
+        window.siteData.homePhotos[key] = dataUrl;
+        saveAdminDataToStorage();
+        renderAdminForms();
+      });
+    }
+
+    function adminAddGalleryByPath() {
+      const title = (document.getElementById('new-gal-title')?.value || '').trim() || 'Rainforest Retreat Moment';
+      const category = document.getElementById('new-gal-cat')?.value || 'Sanctuary & Chalets';
+      const path = (document.getElementById('new-gal-path')?.value || '').trim();
+      if (!path) {
+        showToast('Please enter a folder path or choose an image file.');
+        return;
+      }
+      window.siteData.gallery.push({ id: 'g_' + Date.now(), title, category, image: path });
+      document.getElementById('new-gal-title').value = '';
+      document.getElementById('new-gal-path').value = '';
+      saveAdminDataToStorage();
+      renderAdminForms();
+    }
+
+    function adminAddGalleryFromFile(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const title = (document.getElementById('new-gal-title')?.value || '').trim() || file.name.replace(/\.[^.]+$/, '');
+      const category = document.getElementById('new-gal-cat')?.value || 'Sanctuary & Chalets';
+      readFileAsDataURL(file, dataUrl => {
+        window.siteData.gallery.push({ id: 'g_' + Date.now(), title, category, image: dataUrl });
+        document.getElementById('new-gal-title').value = '';
+        saveAdminDataToStorage();
+        renderAdminForms();
+      });
+    }
+
+    function adminMoveGallery(idx, dir) {
+      const target = idx + dir;
+      if (target < 0 || target >= window.siteData.gallery.length) return;
+      const temp = window.siteData.gallery[idx];
+      window.siteData.gallery[idx] = window.siteData.gallery[target];
+      window.siteData.gallery[target] = temp;
+      saveAdminDataToStorage();
+      renderAdminForms();
+    }
+
+    function adminDeleteGallery(idx) {
+      window.siteData.gallery.splice(idx, 1);
+      saveAdminDataToStorage();
+      renderAdminForms();
+    }
+
+    function adminSaveGeneralSettings() {
+      const s = window.siteData.settings;
+      s.address = (document.getElementById('adm-set-address')?.value || '').trim() || 'Kukuleganga, Ayagama';
+      s.whatsapp = (document.getElementById('adm-set-wa')?.value || '').trim() || '94712359694';
+      s.email = (document.getElementById('adm-set-email')?.value || '').trim() || 'rr.kukule@gmail.com';
+      s.facebook = (document.getElementById('adm-set-fb')?.value || '').trim();
+      s.instagram = (document.getElementById('adm-set-ig')?.value || '').trim();
+      s.adminUser = (document.getElementById('adm-set-user')?.value || '').trim() || 'rainforestretreat.lk';
+      s.adminPass = (document.getElementById('adm-set-pass')?.value || '').trim() || '123456';
+      saveAdminDataToStorage();
+    }
+
+    // --- MODALS ---
+    function openAccessRoutesModal() {
+      document.getElementById('access-routes-modal')?.classList.remove('hidden');
+    }
+    function closeAccessRoutesModal() {
+      document.getElementById('access-routes-modal')?.classList.add('hidden');
+    }
+
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      if (modal && img) {
+        img.src = src;
+        if (cap) cap.textContent = caption || '';
+        modal.classList.remove('hidden');
+      }
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox-modal')?.classList.add('hidden');
+    }
+
+    // --- SCROLL REVEAL OBSERVER ---
+    function observeRevealElements() {
+      const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('visible'));
+        return;
+      }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(el => obs.observe(el));
+    }
+
+    // --- INITIALIZE DEFAULT DATES & RENDER ---
+    window.addEventListener('DOMContentLoaded', () => {
+      loadSavedData();
+
+      const today = new Date();
+      const tomorrow = new Date(today.getTime() + 86400000);
+      const dayAfter = new Date(today.getTime() + 86400000 * 2);
+      const fmt = d => d.toISOString().split('T')[0];
+
+      ['quick-checkin', 'bk-checkin'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = fmt(tomorrow);
+      });
+      ['quick-checkout', 'bk-checkout'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = fmt(dayAfter);
+      });
+
+      renderAllViews();
+      updateBookingCalculation();
+      observeRevealElements();
+    });
+  </script>
+</body>
+</html>
